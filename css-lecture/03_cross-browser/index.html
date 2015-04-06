@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>CSS Methodologies and Frameworks - Исаков Евгений</title>
+
+		<meta name="description" content="CSS Methodologies and Frameworks - internal EPAM Labs">
+		<meta name="author" content="Yevhen Isakov">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/beige.css" id="theme">
+
+        <link rel="stylesheet" href="css/theme/user.css" />
+
+        <!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/user.css">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Cross-Browser</h1>
+				</section>
+
+				<section>
+                    <h2>Internet Explorer</h2>
+                    <ul style="margin-left:45%;margin-top:60px;" class="fragment">
+                        <li>IE 6 - 2001</li>
+                        <li>IE 7 - 2006</li>
+                        <li>IE 8 - 2009</li>
+                        <li>IE 9 - 2011</li>
+                        <li>IE 10 - 2012</li>
+                        <li>IE 11 - 2013</li>
+                    </ul>
+				</section>
+                
+                <section>
+                    <h2>Spartan</h2>
+                    <img src="assets/i/spartan.png" alt="" style="display: block;width: 400px;margin:auto;"/>
+                </section>
+
+                <section>
+                    <h2>legacy code</h2>
+                    <ul>
+                        <li class="fragment">
+                             <pre><code data-trim class="css bad">
+html > body E {
+    foo: bar;
+    }
+                             </code></pre>
+                        </li>
+                        <li class="fragment">
+                             <pre><code data-trim class="css bad">
+* html E {
+    foo: bar;
+    }
+                             </code></pre>
+                        </li>
+                        <li class="fragment">
+                             <pre><code data-trim class="css bad">
+* + html E {
+    foo: bar;
+    }
+                             </code></pre>
+                        </li>
+                        <li class="fragment">
+                            <pre><code data-trim class="css bad">
+E {
+    foo: bar\9;
+    }
+                            </code></pre>
+                        </li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h1>Conditional Comments</h1>
+                    <ul>
+                        <li>
+                            <pre><code>
+&lt;!--[if lt IE N]&gt; {CONDITIONAL} &lt;![endif]--&gt;
+                            </code></pre>
+                        </li>
+                        <li class="fragment">
+                            <pre><code class="xml">
+&lt;!--[if lt IE 9]&gt;&lt;link rel="stylesheet" href="style-oldie.css" /&gt;&lt;![endif]--&gt;
+                            </code></pre>
+                        </li>
+                        <li class="fragment">
+                            <pre><code class="xml">
+&lt;!--[if lt IE 9]&gt;&lt;html class="lt-ie9"&gt;&lt;![endif]--&gt;
+                            </code></pre>
+                        </li>
+                        <li class="fragment">
+                            <pre><code data-trim class="css good">
+.lt-ie9 E {
+    foo: bar;
+    }
+                            </code></pre>
+                        </li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h1>Vendor prefixes</h1>
+                </section>
+
+                <section>
+                    <h1>Vendor -pre-fixes</h1>
+                </section>
+
+                <section>
+                    <pre><code class="css">
+E {
+    -webkit-property: value;
+       -moz-property: value;
+        -ms-property: value;
+         -o-property: value;
+            property: value;
+    }
+                    </code></pre>
+                </section>
+
+                <section>
+                    <ul>
+                        <li>
+                            <pre><code class="css bad">
+E {
+    property: value;
+    -o-property: value;
+    -ms-property: value;
+    -moz-property: value;
+    -webkit-property: value;
+    }
+                            </code></pre>
+                        </li>
+                        <li class="fragment">
+                            <pre><code class="css good">
+E {
+    -webkit-property: value;
+       -moz-property: value;
+        -ms-property: value;
+         -o-property: value;
+            property: value;
+    }
+                            </code></pre>
+                        </li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2><a href="http://caniuse.com" target="_blank">caniuse.com</a></h2>
+                    <img src="assets/i/caniuse.jpg" alt="" style="display: block;width: 1200px;margin:50px auto 0;"/>
+                </section>
+
+                <section>
+                    <h2>Autoprefixer</h2>
+                    <div class="fragment" style="text-align: left;">
+                        <img src="assets/i/sitnik.jpeg" alt="" style="float: left;height: 400px;margin-right: 40px;"/>
+                        <h3>Andrey Sitnik</h3>
+                        <p><a href="https://twitter.com/andrey_sitnik" target="_blank">@andrey_sitnik</a></p>
+                        <p><a href="https://github.com/postcss/autoprefixer" target="_blank">github.com/postcss/autoprefixer</a></p>
+                    </div>
+                </section>
+
+                <section>
+                    <h1>Graceful degradation</h1>
+                </section>
+
+                <section>
+                    <ul>
+                        <li>
+                            <pre><code class="css">
+E {
+    linear-gradient(to left, #600000, #c80000);
+    }
+                            </code></pre>
+                        </li>
+                        <li class="fragment">
+                            <pre><code class="css good">
+E {
+    linear-gradient(to left, #600000, #c80000);
+    }
+
+.lt-ie9 E {
+    background-color: #920000;
+    background-image: url(...);
+    }
+                            </code></pre>
+                        </li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h1>Progressive Enchancement</h1>
+                </section>
+
+                <section>
+                    <ul>
+                        <li>
+                            <pre><code class="css">
+.element {
+    background-color: #920000;
+    }
+
+.element:hover {
+    background-color: #c80000;
+    }
+                            </code></pre>
+                        </li>
+                        <li>
+                            <pre><code class="css good">
+.element {
+    background-color: #920000;
+    transition: background-color linear .2s;
+    }
+
+.element:hover {
+    background-color: #c80000;
+    }
+                            </code></pre>
+                        </li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h1>Tools</h1>
+                </section>
+
+                <section>
+                    <h2>-Prefix-free</h2>
+                    <div class="fragment" style="text-align: left;">
+                        <img src="assets/i/verou.jpg" alt="" style="float: left;height: 400px;margin-right: 40px;"/>
+                        <h3>Lea Verou</h3>
+                        <p><a href="https://twitter.com/leaverou" target="_blank">@leaverou</a></p>
+                        <p><a href="http://leaverou.github.io/prefixfree/" target="_blank">leaverou.github.io/prefixfree</a></p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Modernizr</h2>
+                    <div class="fragment" style="margin-top:50px;">
+                        <div style="text-align: left;float: left;width: 50%;">
+                            <img src="assets/i/faruk.jpg" alt="" style="float: left;height: 300px;margin-right: 40px;"/>
+                            <h3>Faruk Ateş</h3>
+                            <p><a href="https://twitter.com/KuraFire" target="_blank">@KuraFire</a></p>
+                        </div>
+                        <div style="text-align: left;float: left;width: 50%;">
+                            <img src="assets/i/irish.jpeg" alt="" style="float: left;height: 300px;margin-right: 40px;"/>
+                            <h3>Paul Irish</h3>
+                            <p><a href="https://twitter.com/paul_irish" target="_blank">@paul_irish</a></p>
+                        </div>
+                        <div style="clear:both;padding-top:50px;"><a href="http://modernizr.com/" target="_blank">modernizr.com</a></div>
+                    </div>
+                </section>
+
+                <section>
+                    <h1>Future is here!</h1>
+                    <img class="fragment" src="assets/i/toy-story.jpg" alt="" style="height:600px;display: block;margin:auto;"/>
+                </section>
+
+                <section>
+                    <h2>@supports</h2>
+                </section>
+
+                <section>
+                    <ul>
+                        <li>
+                            <pre><code class="css">
+@supports (width: 75vw) and (height: 50vh) {
+    E {
+        width: 75vw;
+        height: 50vh;
+        }
+    }
+                            </code></pre>
+                        </li>
+                        <li class="fragment">
+                            <pre><code class="css">
+@supports not (font-size: calc(1rem + 8px)) {
+    E {
+        font-size: 16px;
+        }
+    E > F {
+        font-size: 24px;
+        }
+    }
+                            </code></pre>
+                        </li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Спасибо</h2>
+
+                    <div class="author">
+                        <img class="author-avatar" src="assets/i/avatar.jpg" alt="" />
+                        <div class="author-main">
+                            <div class="author-name">Исаков Евгений</div>
+                            <div class="author-job">Frontend dev @ EPAM Systems</div>
+                            <div class="author-contacts">
+                                <!--<div class="author-contacts_email"><a href="mailto:is4kov@gmail.com">is4kov@gmail.com</a></div>-->
+                                <div class="author-contacts_twitter"><a href="https://twitter.com/is4kov">@is4kov</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+	</body>
+</html>
