@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>CSS3</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=680, user-scalable=no">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,600,400&subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700&subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="styles/screen.css">
+	<link rel="stylesheet" href="styles/my.css">
+</head>
+<body class="list">
+	<!--
+		Debug class on <body> enables
+		cyan grid on slides
+		-->
+	<header class="caption">
+		<h1>Advanced CSS Часть 3</h1>
+		<p><a href="">Светлана Пилипенко</a>, EPAM Systems.</p>
+	</header>
+
+	<section class="slide shout grow slide_bg bg-lines"><div>
+		<h2>
+			Переходы
+		</h2>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2 class="h2">transition &ndash; переход</h2>
+		<pre><code><mark>transition:</mark> transition-property
+			 transition-duration
+			 transition-timing-function
+			 transition-delay
+</code></pre>
+	</div></section>
+
+
+
+	<section class="slide"><div>
+ <iframe src="http://easings.net/ru" width="820" height="520" >
+    Ваш браузер не поддерживает плавающие фреймы!
+ </iframe>
+	</div></section>
+
+<section class="slide"><div>
+		<h2 class="h2">transition &ndash; переход</h2>
+		<pre><code><mark>transition:</mark> all .4s ease-in-out .04s;
+
+<mark>transition:</mark> transform .44s ease-in-out,
+			 opacity .4s ease-in-out .04s;
+</code></pre>
+	</div></section>
+
+	</div></section>
+		<section class="slide"><div>
+ <iframe src="http://codepen.io/mirantel/full/PwrKoR" width="1640" height="1040" style="transform: scale(0.5) translate(-50%, -50%);
+">
+    Ваш браузер не поддерживает плавающие фреймы!
+ </iframe>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Поддержка в браузерах:</h2>
+		<img src="pictures/transition.png" alt="" width="100%">
+	</div></section>
+
+
+
+<section class="slide shout grow slide_bg bg-animation"><div>
+		<h2>
+			CSS3 Анимации
+		</h2>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2 class="h2">Animation</h2>
+		<pre><code><mark>animation:</mark> animation-name
+			 animation-duration
+			 animation-timing-function
+			 animation-delay
+			 animation-iteration-count: number | infinite
+			 animation-direction
+			 animation-fill-mode
+			 animation-play-state: running | paused
+</code></pre>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2 class="h2">Порядок выполнения анимации</h2>
+		<pre><code><mark>animation-direction:</mark> normal
+			 reverse
+			 alternate
+			 alternate-reverse
+</code></pre>
+	</div></section>
+
+	<section class="slide"><div>
+ <iframe src="http://codepen.io/mirantel/full/ogrepo" width="820" height="520" >
+    Ваш браузер не поддерживает плавающие фреймы!
+ </iframe>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2 class="h2">Поведение после завершения</h2>
+		<pre><code><mark>animation-fill-mode:</mark> none
+			 forwards
+			 backwards
+			 both
+</code></pre>
+	</div></section>
+
+	<section class="slide"><div>
+ <iframe src="http://codepen.io/mirantel/full/xboLzr" width="820" height="520" >
+    Ваш браузер не поддерживает плавающие фреймы!
+ </iframe>
+	</div></section>
+
+	<section class="slide"><div>
+	<h2 class="h2">Пауза</h2>
+ <iframe src="http://codepen.io/mirantel/full/zxVdMZ" width="820" height="420" >
+    Ваш браузер не поддерживает плавающие фреймы!
+ </iframe>
+	</div></section>
+
+	<section class="slide"><div>
+	<h2 class="h2">@keyframes</h2>
+		<pre><code><mark>@keyframes identifier</mark> {
+			 from { top: 0; }
+			 to { top: 0; }
+			 }
+<mark>@keyframes identifier</mark> {
+			 0% { top: 0; }
+			 50% { top: 10px; }
+			 100% { top: 0; }
+			 }
+</code></pre>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Поддержка в браузерах:</h2>
+		<img src="pictures/animation.png" alt="" width="100%">
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Примеры:</h2>
+		<ul>
+			<li><a href="http://codepen.io/juliangarnier/full/bEhcF">Пейзаж</a></li>
+			<li><a href="http://codepen.io/juliangarnier/full/hzDAF">TRIDIV</a></li>
+			<li><a href="http://codepen.io/juliangarnier/full/GJtDf">Город</a></li>
+			<li><a href="http://codepen.io/juliangarnier/full/LzlhE">Многогранник</a></li>
+		</ul>
+
+		<h2>Документация:</h2>
+		<ul>
+			<li><a href="http://www.w3.org/TR/css3-transitions/">CSS Transitions</a></li>
+			<li><a href="http://www.w3.org/TR/css3-animations/">CSS Image Values and Replaced Content Module Level 3</a></li>
+		</ul>
+
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Светлана Пилипенко, EPAM Systems.</h2>
+		<ul>
+			<li><a href="https://twitter.com/Mirantel">@mirantel</a></li>
+			<li><a href="https://github.com/mirantel">github.com/mirantel</a></li>
+			<li>Skype: magi-mirantel</li>
+		</ul>
+	</div></section>
+
+	<!--
+		To hide progress bar from entire presentation
+		just remove “progress” element.
+		-->
+<!-- 	<div class="progress"><div></div></div> -->
+	<script src="js/shower.min.js"></script>
+	<!-- Copyright © 2013 Yours Truly, Famous Inc. -->
+</body>
+</html>
