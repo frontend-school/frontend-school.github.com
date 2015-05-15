@@ -1,0 +1,50 @@
+.block {
+  background: #fe57a1;
+  }
+
+.block__element {
+  color: rgba(254, 87, 161, .75);
+  }
+
+
+.block {
+
+  @color: #fe57a1;
+  @opacity: .75;
+
+  background: @color;
+
+  &__element {
+    color: rgba(red(@color), green(@color), blue(@color), @opacity);
+    }
+  }
+
+
+.block {
+
+  @color: #fe57a1;
+  @opacity: .75;
+
+  background: @color;
+
+  &__element {
+    color: fadeout(@color, (1 - @opacity) * 100%);
+    }
+  }
+
+
+
+
+
+.button {
+  display: inline-block;
+  padding: 6px 10px;
+
+  @color: #fe57a1;
+  @diff: 15;
+
+  color: @color;
+  color-darken: darken(@color, 15);
+
+  color-test: hsl(hue(@color), saturation(@color), lightness(@color) - 15);
+  }

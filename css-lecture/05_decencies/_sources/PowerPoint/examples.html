@@ -1,0 +1,2381 @@
+<!doctype html>
+
+<!--[if lt IE 8]>      <html class="lt-ie10 lt-ie9 lt-ie8" lang="ru"> <![endif]-->
+<!--[if IE 8]>         <html class="lt-ie10 lt-ie9"        lang="ru"> <![endif]-->
+<!--[if IE 9]>         <html class="lt-ie10"               lang="ru"> <![endif]-->
+<!--[if gt IE 9]><!--> <html                               lang="ru"> <!--<![endif]-->
+
+<h2>fw.css old code</h2>
+<pre>
+html {
+  height: 100%;
+}
+body {
+  font-size: 12px;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  height: auto !important;
+  height: 100%;
+  min-height: 100%;
+  background: #fff;
+  color: #333;
+  line-height:normal;
+  font-family: Arial, Tahoma, Sans-Serif;
+  line-height:16px !important;
+}
+.g-page_outline {
+	width: 980px;
+	padding: 5px 10px 10px 10px;
+	background: #FFFFFF;
+	border-radius: 5px;
+	-moz-border-radius:5px;
+	-webkit-border-radius: 5px;
+	margin: 0 auto;
+}
+form {
+	margin: 0;
+	padding: 0;
+}
+a, img {
+  border: none;
+}
+a {
+  color: #005599;
+  text-decoration: none;
+}
+a:hover {
+  color:#982339;
+  text-decoration: none;
+}
+a:focus {
+  outline: none;
+}
+input, textarea {
+  font-size:12px;
+  font-family: Arial, Tahoma, Sans-Serif;
+}
+
+/* H */
+h1, h2, h3, h4, h5, h6 {
+	color: #333;
+	font-weight: normal;
+  margin:0px;
+  padding:0px;
+}
+h1 {
+	font-size: 30px;
+	line-height: 34px;
+}
+h2 {
+	font-size: 24px;
+	line-height: 28px;
+}
+h3 {
+	font-size: 22px;
+	font-weight: 700;
+	line-height: 26px;
+}
+h4 {
+	font-size: 20px;
+	font-weight: 400;
+	line-height: 24px;
+}
+h5 {
+	font-size: 16px;
+	line-height: 20px;
+  font-weight:700;
+}
+h6 {
+	font-size: 16px;
+	line-height: 18px;
+}
+/* end H */
+/* global clear */
+.g-cl,
+.g-cl_s,
+.g-cl_m,
+.g-cl_b,
+.g-cl_sb,
+.g-cl_gn {
+  clear:both;
+  overflow:hidden;
+  font-size: 1px;
+}
+.g-cl {
+  height:0px;
+}
+.g-cl_s {
+  height:5px;
+}
+.g-cl_m {
+  height: 10px;
+}
+.g-cl_b {
+  height: 15px;
+}
+.g-cl_sb {
+  height: 20px;
+}
+/*end global clear */
+/* global margin */
+.g-mt_s {
+  margin-top:5px;
+}
+.g-mt_m {
+  margin-top:10px;
+}
+.g-mt_b {
+  margin-top:15px;
+}
+.g-ml_s {
+  margin-left:5px;
+}
+.g-ml_m {
+  margin-left:10px;
+}
+.g-ml_b {
+  margin-left:15px;
+}
+.g-mr_s {
+  margin-right:5px;
+}
+.g-mr_m {
+  margin-right:10px;
+}
+.g-mr_b {
+  margin-right:15px;
+}
+.g-mr_mb {
+  margin-right:30px;
+}
+.g-mr_vb {
+  margin-right:40px;
+}
+/* end global margin */
+.g-small {
+	font-size: 11px;
+	line-height:15px;
+}
+.g-normal {
+	font-size: 12px;
+}
+.g-large {
+	font-size: 14px !important;
+	line-height: 18px;
+}
+.g-larger {
+	font-size: 16px !important;
+	line-height: 20px;
+}
+.g-fl {
+	float: left;
+}
+.g-fr {
+	float: right;
+}
+.g_text_l {
+	text-align:left !important;
+}
+.g_text_c {
+	text-align:center !important;
+}
+.g_text_r {
+	text-align:right !important;
+}
+.g-hidden {
+  visibility:hidden;
+}
+.g-none {
+  display:none !important;
+}
+p {
+  margin:0px;
+}
+ul {
+	list-style-image:none;
+	list-style-position:outside;
+	list-style-type:none;
+	text-indent:0px;
+	margin:0px;
+	padding:0px;
+}
+ul li {
+  background: url('../img/li_bul.gif') no-repeat 0px 7px;
+	list-style-type:none;
+	padding:1px 0px 7px 10px;
+}
+ol {
+	text-indent:0px;
+	margin:0px;
+	padding:0px 0 0 25px;
+}
+ol li {
+	padding:1px 0px 7px 0px;
+}
+.pl_out ,
+.pl_in {
+	overflow:hidden;
+	font-size:1px;
+  height:1px;
+}
+.pl_in {
+	border-left:1px solid #fff;
+	border-right:1px solid #fff;
+}
+.pl_out {
+	border-left:2px solid #fff;
+	border-right:2px solid #fff;
+}
+.g-pr {
+  position:relative;
+}
+.g-mnull {
+  margin:0px !important;
+}
+.g-vmid {
+  vertical-align:middle;
+}
+/*corners 1px*/
+.crn {
+  display:block;
+	font-size:0px;
+	width:1px;
+	height:1px;
+	overflow:hidden;
+	position:absolute;
+  background: #fff;
+  z-index:2;
+}
+.crn_tl {
+	top:0;
+	left:0;
+}
+.crn_tr {
+	top:0;
+	right:0;
+}
+.crn_bl {
+  bottom:0px;
+  left:0px;
+}
+.crn_br {
+  bottom:0px;
+  right:0px;
+}
+/*end corners 1px*/
+/*global corners 5px */
+.g-img_crn {
+  width:300px;
+  height:200px;
+  position:relative;
+}
+.g-img_crn b {
+  display:block;
+  position:absolute;
+  height:4px;
+  width:4px;
+  overflow:hidden;
+  font-size:0px;
+  background: url('../img/img_corners.png') no-repeat;
+}
+.g-img_crn b.g-img_crn_tr {
+  background-position: right top;
+	top:0;
+	right:0;
+}
+.g-img_crn b.g-img_crn_tl {
+  background-position: left top;
+	top:0;
+	left:0;
+}
+.g-img_crn b.g-img_crn_bl {
+  background-position: left bottom;
+	bottom:0;
+	left:0;
+}
+.g-img_crn b.g-img_crn_br {
+  background-position: right bottom;
+	bottom:0;
+	right:0;
+}
+/* end global corners 5px */
+
+
+
+/*right banner*/
+.b-banner_sm {
+  width:302px;
+  padding:2px 9px 9px;
+  text-align:right;
+  font-size:10px;
+  color:#888;
+  line-height:9px;
+  letter-spacing: -1px;
+  float:left;
+  background: #fff;
+  border-radius: 5px;
+  -moz-border-radius:5px;
+  -webkit-border-radius: 5px;
+  /*height:259px; we can't use it because banner can have bigger height. Use min-height instead. */
+  min-height:259px;
+}
+/*end *right banner*/
+/*listalka*/
+.b-listalka {
+  background: url('../img/project.png') no-repeat left -256px;
+  _background: url('../img/project.gif') no-repeat left -256px;
+  height:17px;
+  width:31px;
+}
+.b-list_prev,
+.b-list_next {
+  display:block;
+  float:left;
+  width:15px;
+  height:17px;
+  background: url('../img/project.png') no-repeat;
+  _background: url('../img/project.gif') no-repeat;
+}
+.b-list_prev {
+  background-position: -31px -256px;
+  margin-right:1px;
+}
+.b-list_next {
+  background-position: -46px -256px;
+}
+.b-list_prev.11b-list_activ,
+.b-list_prev:hover {
+  background-position: -61px -256px;
+}
+.b-list_next.11b-list_activ,
+.b-list_next:hover {
+  background-position: -76px -256px;
+}
+
+/*
+.b-list_prev.b-list_activ {
+  background-position: -61px -256px;
+}
+.b-list_next.b-list_activ {
+  background-position: -76px -256px;
+}
+*/
+
+.b-list_next.b-list_inactive {
+  background-position: -106px -256px !important;
+  cursor:default;
+}
+.b-list_prev.b-list_inactive {
+  background-position: -91px -256px !important;
+  cursor:default;
+}
+/*end listalka*/
+/*l-blocks*/
+.l-bigcol {
+  width:650px;
+  float:left;
+}
+.l-smallcol {
+  float:right;
+  width:320px;
+}
+/*end l-blocks*/
+/*g-color*/
+.c-gray {
+  color:#888;
+}
+/* end g-color*/
+a {
+	outline: none;
+}
+
+/*///////////////////////////////////////////////////*/
+/*standarts*/
+body {
+  background:#fcfeff;
+}
+.b-banner_top {
+  margin:5px 0 10px;
+}
+.l-page {
+  width:980px;
+  margin:0 auto;
+}
+.l-footer_bg {
+  background: #f2f4f5;
+  margin-top:50px;
+}
+.l-header_bg .l-page {
+  z-index:3;
+}
+.b-bigcol_content {
+  padding:9px;
+  width:632px;
+  background: #fff;
+  border-radius: 5px;
+  -moz-border-radius:5px;
+  -webkit-border-radius: 5px;
+}
+/* end scr*/
+
+.b-header i.cbr {
+  background:url("../img/h_corners.png") no-repeat -5px 0;
+  display:block;
+  overflow:hidden;
+  position:absolute;
+  right:0;
+  bottom:0;
+  width:5px;
+  height:5px;
+  z-index:6;
+}
+.b-header i.cbl {
+  background:url("../img/h_corners.png") no-repeat 0 0;
+  display:block;
+  overflow:hidden;
+  position:absolute;
+  height:5px;
+  width:5px;
+  bottom:0px;
+  left:0px;
+  z-index:7;
+}
+
+.b-header {
+  padding:4px 0 0 0;
+  float:left;
+  width:980px;
+  position:relative;
+}
+.b-header_top {
+  margin:0 10px;
+  overflow:hidden;
+  width:960px;
+}
+/*
+.ic_makestart {
+  height:8px;
+  width:8px;
+  background: url('../img/project.png') no-repeat 0px 0px;
+  _background: url('../img/project.gif') no-repeat 0px 0px;
+}*/
+.ic_gohome {
+  height:9px;
+  width:8px;
+  background: url('../img/project.png') no-repeat 0px 0px;
+  _background: url('../img/project.gif') no-repeat 0px 0px;
+  margin-right:3px;
+}
+
+.ic_all_serv {
+  height:3px;
+  width:5px;
+  vertical-align:2px;
+  background: url('../img/project.png') no-repeat  -8px 0px;
+  _background: url('../img/project.gif') no-repeat  -8px 0px;
+}
+.ic_all_serv.ic_all_serv_up {
+  background: url('../img/project.png') no-repeat -13px 0px;
+  _background: url('../img/project.gif') no-repeat -13px 0px;
+}
+.ic_id {
+  margin:0 3px 0 5px;
+  vertical-align:middle;
+}
+.c-header_log {
+  /*color:#7F9BBE;*/
+}
+.b-header_r,
+.b-header_l_vn {
+  color:#888;
+  white-space:nowrap;
+}
+.ic_mail {
+  width:13px;
+  height:10px;
+  background: url('../img/project.png') no-repeat 0px -11px;
+  _background: url('../img/project.gif') no-repeat 0px -11px;
+  margin-right:5px;
+  vertical-align:-1px;
+}
+.b-header_c {
+  background: url('../img/project.png') no-repeat 0px -21px;
+  _background: url('../img/project.gif') no-repeat 0px -21px;
+  height:60px;
+  margin-top:5px;
+  width:980px;
+  position:relative;
+  /*z-index:2;*/
+}
+.b-header_top_left {
+  padding-top:10px;
+  float:left;
+  _width:500px;
+}
+/*
+.b-header_h1 {
+  font-size:16px;
+  line-height:20px;
+  padding:0;
+  margin:0 5px 0 0;
+}
+.b-header_h1 a {
+  color:#fff;
+}
+*/
+
+.b-header_h1 {
+  margin:0 8px 0 0;
+}
+.b-header_h1 a b {
+  display:none;
+}
+.b-header_h1 a {
+  display:block;
+  width:109px;
+  height:18px;
+  background: url('../img/project.png') no-repeat -35px -3px;
+  _background: url('../img/project.gif') no-repeat -35px -3px;
+}
+.b-header_h1 a:hover {
+  background: url('../img/project.png') no-repeat -144px -3px;
+  _background: url('../img/project.gif') no-repeat -144px -3px;
+}
+.b-header_logo a {
+  display:block;
+  width:68px;
+  height:21px;
+  background: url('../img/project.png') no-repeat -253px top;
+  _background: url('../img/project.gif') no-repeat -253px top;
+  position:relative;
+  margin-top:-1px;
+}
+
+
+
+
+/*header search*/
+.b-search {
+  padding:8px 0 0 0;
+  float:right;
+  _width:302px;
+}
+.header_find {
+	width:69px;
+	height:23px;
+	padding-bottom:2px;
+	background: url('../img/project.png') no-repeat 0px -81px;
+	_background: url('../img/project.gif') no-repeat 0px -81px;
+	border:none;
+	cursor:pointer;
+	font-weight:700;
+	color:#974c1d;
+  line-height:22px;
+}
+.header_find:hover {
+	background: url('../img/project.png') no-repeat -69px -81px;
+	_background: url('../img/project.gif') no-repeat -69px -81px;
+	color:#b58148;
+}
+.b-header_inp {
+  background: url('../img/project.png') -138px -81px no-repeat;
+  _background: url('../img/project.gif') -138px -81px no-repeat;
+  width:228px;
+  height:23px;
+  width:218px !ie;
+  padding:0 5px !ie;
+  color:#333;
+}
+.b-header_inp input {
+  background:none;
+  border:none;
+  margin:0px;
+  float:left;
+  padding:4px 5px 4px 5px;
+  width:218px;
+  width:218px !ie;
+  padding:4px 0px !ie;
+}
+.b-search_text {
+  margin-top:4px;
+}
+/*end header search*/
+/*submenu*/
+.b-submenu {
+/*
+  padding-bottom:2px;
+  padding-top:3px;*/
+  position:relative;
+  z-index:1;
+  background: #DC780A;
+  height:25px;
+}
+ul.submenu {
+  /*margin:0 0 5px 10px;*/
+  margin:0 10px;
+}
+ul.submenu li {
+  float:left;
+  height:25px;
+  /*padding:0 8px 3px;*/
+  padding:0 8px 0px;
+  font-weight:bold;
+  background: none;
+}
+ul.submenu li a {
+  display:block;
+  height:22px;
+  _height:21px;
+  padding-top:3px;
+  _float:left;
+}
+
+
+
+ul.submenu .b-submenu_drdown a {
+  display:block;
+  float:left;
+  padding:0px 0 0 10px;
+  height:25px;
+}
+ul.submenu .b-submenu_drdown a span {
+  display:block;
+  font-weight:700;
+  height:22px;
+  padding:3px 10px 0px 0;
+}
+.b-submenu_drdown a.b-submenu_drdown_a:hover,
+.b-submenu_drdown:hover a.b-submenu_drdown_a {
+	background: url('../img/project.png') no-repeat left -127px;
+	_background: url('../img/project.gif') no-repeat left -127px;
+}
+
+.b-submenu_drdown a.b-submenu_drdown_a:hover span,
+.b-submenu_drdown:hover a.b-submenu_drdown_a span {
+	background: url('../img/project.png') no-repeat right -127px;
+	_background: url('../img/project.gif') no-repeat right -127px;
+}
+
+ul.submenu .sub_drdown {
+  padding-left:0px;
+}
+.b-pop_up_submenu a {
+  display:inline !important;
+  float:left;
+  height:auto !important;
+}
+
+
+
+
+
+
+
+ul.submenu .sub_first {
+  padding-left:0px;
+}
+ul.submenu .sub_current a {
+  color:#fff;
+}
+/*end submenu*/
+/*menu*/
+.b-menu {
+	margin-top:5px;
+	/*width:700px;*/
+}
+.b-menu div {
+  float:left;
+  position:relative;
+  z-index:6;
+}
+.b-menu a {
+	display:block;
+	padding:0 0 0 10px;
+	float:left;
+  background: url('../img/project.png') no-repeat -979px -81px;
+  _background: url('../img/project.gif') no-repeat -979px -81px;
+}
+.b-menu a span {
+  color:#8f2c00;
+  display:block;
+  font-weight:700;
+  padding:3px 10px 5px 0;
+}
+.b-menu a:hover {
+  background: url('../img/project.png') 0px -104px no-repeat;
+  _background: url('../img/project.gif') 0px -104px no-repeat;
+  margin-right: -1px;
+  position: relative;
+  cursor: pointer;
+  z-index: 5;
+}
+
+.b-menu a:hover span {
+  background: url('../img/project.png') right -104px no-repeat;
+  _background: url('../img/project.gif') right -104px no-repeat;
+  font-weight:700;
+  color:#fff !important;
+  padding-right: 11px;
+}
+
+
+.b-menu a.menu_curr,
+.b-menu a.menu_curr:hover {
+  background: url('../img/project.png') 0px -104px no-repeat;
+  _background: url('../img/project.gif') 0px -104px no-repeat;
+  margin-right:-1px;
+  position:relative;
+  z-index:5;
+}
+.b-menu a.menu_curr span,
+.b-menu a.menu_curr:hover span {
+  background: url('../img/project.png') right -104px no-repeat;
+  _background: url('../img/project.gif') right -104px no-repeat;
+  padding-right:11px;
+  color:#fff;
+}
+
+.b-menu_drdown:hover a,
+.a_drdown:hover {
+	background: url('../img/project.png') no-repeat 0px -128px;
+	_background: url('../img/project.gif') no-repeat 0px -128px;
+  margin-right:-1px;
+  position:relative;
+  z-index:5;
+}
+
+.b-menu_drdown:hover a span,
+.a_drdown:hover span {
+	background: url('../img/project.png') no-repeat right -128px;
+	_background: url('../img/project.gif') no-repeat right -128px;
+  padding-right:11px;
+  color:#fff;
+}
+.b-menu .menu_f {
+  padding:0px;
+  background:none;
+}
+.b-menu .menu_f span {
+  padding-left:10px !important;
+}
+.menu_curr.menu_f {
+  padding:0px !important;
+  background:none !important;
+}
+.menu_curr.menu_f span {
+  padding-left:10px !important;
+}
+.a_drdown,
+.a_drdown_up {
+  font-weight:bold;
+}
+.a_drdown_up span {
+  color:#fff !important;
+}
+.ic_drdown {
+  background:url('../img/project.png') no-repeat -8px -3px;
+  _background:url('../img/project.gif') no-repeat -8px -3px;
+  margin-left:4px;
+  vertical-align:2px;
+  height:3px;
+  width:5px;
+}
+.menu_curr .ic_drdown,
+.a_drdown_up .ic_drdown {
+  background-position: -8px -6px;
+}
+
+
+.b-header_favorite {
+  float:right;
+  margin:8px 10px 0px;
+}
+.b-header_favorite a {
+  color: #FFFFFF;
+  line-height: 12px;
+}
+.b-header_favorite a:hover, .b-header_favorite a:hover + a {
+  color: #FFF5B2;
+}
+a.g-ic_favorite_header {
+  display:block;
+  height:12px;
+  width:13px;
+  background:url('../img/project.png') no-repeat -544px -214px;
+  _background:url('../img/project.gif') no-repeat -544px -214px;
+}
+.g-ic_favorite_header_nempty {
+  background-position:  -544px -214px;
+}
+
+/*popup menu*/
+.b-pop_up_menu,
+.b-pop_up_submenu {
+	display: none;
+	position: absolute;
+	overflow: hidden;
+	padding: 5px 10px 3px;
+	background: #b25d00;
+	z-index: 5;
+	left: 0;
+	top: 24px;
+
+  box-shadow: 0px 0px 10px 0px #686868;
+  -webkit-box-shadow: 0px 0px 10px 0px #686868;
+  -moz-box-shadow: 0px 0px 10px 0px #686868;
+
+	border-radius-bottomleft: 5px;
+	border-radius-bottomright: 5px;
+	-moz-border-radius-bottomleft: 5px;
+	-moz-border-radius-bottomright: 5px;
+	-webkit-border-bottom-left-radius: 5px;
+	-webkit-border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	-o-border-bottom-left-radius: 5px;
+	-o-border-bottom-right-radius: 5px;
+}
+.b-pop_up_submenu {
+  top:25px;
+}
+.b-pop_up_menu a,
+.b-pop_up_submenu a{
+	background: none !important;
+	color: #FFF;
+	clear: both;
+	padding:0 0 6px 0 !important;
+}
+.b-pop_up_menu a:hover,
+.b-pop_up_submenu a:hover {
+	background: none;
+	color: #FFF59F;
+}
+/*end popup menu*/
+
+/*popup menu
+.b-pop_up_menu {
+  position:absolute;
+  left:0px;
+  top:19px;
+  z-index:10px;
+  margin:0 0 0 -15px;
+  display:none;
+  padding-top:4px;
+
+}
+.b-pop_up_menu a {
+  border-bottom:1px solid #EEEEEE;
+  display:block;
+  font-weight:700;
+  padding:7px 10px;
+  width:150px;
+}
+.b-pop_up_menu_vn {
+  display:block;
+  background: #fff;
+  overflow:hidden;
+  padding:5px 15px 5px;
+  -webkit-border-radius: 0px 0px 4px 4px;
+  -moz-border-radius: 0px 0px 4px 4px;
+  border-radius: 0px 0px 4px 4px;
+
+  box-shadow: 0px 0px 10px 0px #686868;
+  -webkit-box-shadow: 0px 0px 10px 0px #686868;
+  -moz-box-shadow: 0px 0px 10px 0px #686868;
+}
+.b-pop_up_menu .bord_null {
+  border:0px;
+}*/
+/*end popup menu*/
+
+
+
+/*end menu*/
+
+/*b-header_menu_r btn*/
+.b-header_menu_r {
+  padding-top:9px;
+}
+.header_btn:hover {
+	background: url('../img/project.png') 0px -167px no-repeat;
+	_background: url('../img/project.gif') 0px -167px no-repeat;
+  color:#fff;
+}
+.header_btn {
+	background:url('../img/project.png') 0px -148px no-repeat;
+	_background:url('../img/project.gif') 0px -148px no-repeat;
+	display:block;
+	padding:0 10px 0 24px;
+	color:#fff;
+	font-weight:700;
+  height:19px;
+  line-height:17px;
+}
+/*end b-header_menu_r btn*/
+/*all services*/
+.b-popup {
+  position:absolute;
+  z-index:15;
+  width:960px;
+  top:24px;
+	border:1px solid #ccc;
+	background-color:#fff;
+	overflow:hidden;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	o-border-radius: 3px;
+	-webkit-box-shadow: 0px 0px 5px #B9B9B9;
+    -moz-box-shadow: 0px 0px 5px #B9B9B9;
+    box-shadow: 0px 0px 5px #B9B9B9;
+	padding: 10px;
+}
+
+
+.b-services a {
+  white-space:nowrap;
+}
+.b-services img {
+  margin-left:5px;
+}
+/*end all services*/
+
+/*b-header_beta*/
+.b-header_beta {
+  margin-bottom:3px;
+}
+.b-header_beta_pl {
+  background: #72A02B;
+  padding:9px 10px 7px;
+  color:#fff;
+  font-size:11px;
+  margin-bottom:3px;
+  overflow:hidden;
+  width:960px;
+  margin:0 auto;
+}
+.b-header_beta_btn {
+  display:block;
+  background: url('../img/project.png') no-repeat -732px -186px;
+  _background: url('../img/ie_beta_btn_header.gif') no-repeat left top;
+  height:17px;
+  width:89px;
+  margin-top:-1px;
+  color:#ffe897;
+  font-weight:bold;
+  text-align:center;
+  padding:1px 0px 2px;
+}
+.b-header_beta_btn:hover {
+  background-position: -732px -206px;
+  _background-position: left -20px;
+  color:#ffe897;
+}
+/*-end b-header_beta*/
+
+
+
+
+
+
+
+
+
+
+
+/* footer */
+.b-services_a {
+  border-top:1px solid #D4D4D4;
+  margin-top:7px;
+  padding-top:6px;
+  width:140px;
+  padding-right:20px;
+}
+.b-services_a a,
+.b-services_a b {
+  clear:both;
+  display:block;
+  float:left;
+  line-height:16px !important;
+  margin:5px 0 4px;
+}
+.ic_up {
+    background: url('../img/project.png') no-repeat -971px -217px;
+    _background: url('../img/project.gif') no-repeat -971px -217px;
+    height:6px;
+    width:9px;
+}
+.l-footer_bg a {
+  color:#3675C6;
+}
+.b-footer_pad a {
+  color:#5781B5;
+}
+.l-footer_bg a:hover,
+.b-footer_pad a:hover {
+  color:#982339;
+}
+.b-footer_pad .black,
+.b-footer_pad  .black:hover {
+	color:#000;
+}
+.b-beta_footer {
+  left:-10px;
+  position:relative;
+}
+.b-beta_footer img {
+  vertical-align:-7px;
+}
+.b-services_see_also a {
+  color:#888;
+}
+.page_bg_footer {
+  background: #f2f4f5;
+}
+.page_bg_footer {
+  width:980px;
+}
+.b-serv_hr {
+  font-size:0px;
+  height:1px;
+  overflow:hidden;
+  background: #E1E1E1;
+  margin:12px 0 12px;
+  clear:both;
+}
+.b-footer_pad {
+  padding:0 10px;
+}
+.c-a_light {
+  color:#5D80C5;
+}
+.c-a_light:hover {
+  color:#2756AD !important;
+}
+.b-holding_saits a {
+  margin-right:15px;
+  color:#888;
+}
+
+.in_net a {
+	background:url('../img/in_net.png') no-repeat;
+	_background:url('../img/in_net.gif') no-repeat;
+	padding-left:22px;
+}
+.in_net a.f_facebook {
+	background-position:0px 0px;
+}
+.in_net a.f_facebook:hover {
+	background-position:0px -20px;
+}
+.in_net a.f_twitter {
+	background-position:0px -40px;
+}
+.in_net a.f_twitter:hover {
+	background-position:0px -60px;
+}
+.in_net a.f_vkontakte {
+	background-position:0px -80px;
+}
+.in_net a.f_vkontakte:hover {
+	background-position:0px -100px;
+}
+.in_net a.f_livejournal {
+	background-position:0px -120px;
+}
+.in_net a.f_livejournal:hover {
+	background-position:0px -140px;
+}
+.in_net a.f_buzz {
+	background-position:0px -160px;
+}
+.in_net a.f_buzz:hover {
+	background-position:0px -180px;
+}
+.in_net a.ftop {
+	background-position:0px -200px;
+}
+.in_net a.ftop:hover {
+	background-position:0px -220px;
+}
+.in_net a.f_blog {
+	background-position:0px -244px;
+  padding-bottom:1px;
+}
+.in_net a.f_blog:hover {
+	background-position:0px -266px;
+}
+.ic_new_footer {
+	vertical-align:0px;
+	margin-left:5px;
+}
+
+
+
+
+
+
+/*end footer */
+/*page*/
+.b-page a,
+.b-page b,
+.b-page span {
+  float:left;
+  display:block;
+  text-align:center;
+  cursor:pointer;
+}
+.b-page_pred {
+   background: url('../img/page.png') no-repeat left 0px;
+   _background: url('../img/page.gif') no-repeat left 0px;
+   padding-left:20px;
+   margin-right:7px;
+}
+.b-page_pred b,
+.b-page_next b {
+  margin-right:-2px;
+  text-align:left;
+  line-height:25px;
+  position:relative;
+}
+.b-page_pred b {
+  background: url('../img/page.png') no-repeat right 0px;
+  _background: url('../img/page.gif') no-repeat right 0px;
+  padding-right:10px;
+}
+.b-page_next {
+  background: url('../img/page.png') no-repeat left -50px;
+  _background: url('../img/page.gif') no-repeat left -50px;
+  padding-left:10px;
+  margin-left:5px;
+}
+.b-page_next b {
+  background: url('../img/page.png') no-repeat right -50px;
+  _background: url('../img/page.gif') no-repeat right -50px;
+  padding-right:20px;
+}
+.b-page_one {
+  background: url('../img/page.png') no-repeat 0px -100px;
+  _background: url('../img/page.gif') no-repeat 0px -100px;
+  width:31px;
+  line-height:27px;
+  height:25px;
+}
+.b-page_f {
+  background: url('../img/page.png') no-repeat -31px -100px;
+  _background: url('../img/page.gif') no-repeat -31px -100px;
+  width:30px;
+  line-height:27px;
+  height:25px;
+}
+.b-page_l {
+  background: url('../img/page.png') no-repeat -61px -100px;
+  _background: url('../img/page.gif') no-repeat -61px -100px;
+  width:31px;
+  line-height:27px;
+  height:25px;
+}
+.b-page_list {
+  width:30px;
+  height:23px !important;
+  line-height:25px;
+  border:1px #E5E5E5 solid;
+  border-right:0px;
+  overflow:hidden;
+}
+.b-page_point {
+  letter-spacing:3px;
+}
+.b-page_pl {
+  margin:5px 15px 0 5px;
+}
+.b-page_pr {
+  margin:5px 5px 0 15px;
+}
+.b-page_pred:hover {
+  background-position: 0 -25px;
+}
+.b-page_pred:hover b {
+  background-position: right -25px;
+}
+.b-page_next:hover {
+  background-position: 0 -75px;
+}
+.b-page_next:hover b {
+  background-position: right -75px;
+}
+.b-page_f:hover,
+.b-page_l:hover,
+.b-page_one:hover,
+.b-page_list:hover {
+  background-color: #feffd4;
+}
+.b-page_list_cur {
+  background-color: #F7F7F7 !important;
+  font-weight:bold;
+  cursor:default !important;
+  overflow:hidden;
+}
+/*page*/
+/*global icons*/
+/*
+.g-ic_photo {
+  width:13px;
+  height:10px;
+  background: url('../img/project.png') no-repeat -76px -427px;
+  _background: url('../img/project.gif') no-repeat left -560px;
+}*/
+.g-ic_photo {
+  width:26px;
+  height:19px;
+  display:block;
+  position:absolute;
+  background: url('../img/project.png') no-repeat -76px -437px;
+  _background: url('../img/project.gif') no-repeat -76px -437px;
+  left:4px;
+  bottom:4px;
+}
+.g-ic_video {
+  width:26px;
+  height:19px;
+  display:block;
+  position:absolute;
+  background: url('../img/project.png') no-repeat -102px -437px;
+  _background: url('../img/project.gif') no-repeat -102px -437px;
+  left:4px;
+  bottom:4px;
+}
+
+#div_player_swf_box embed {
+  width:100%;
+  height:100%;
+}
+
+.g-ic_foto_text {
+  width:13px;
+  height:10px;
+  background: url('../img/project.png') no-repeat left -560px;
+  _background: url('../img/project.gif') no-repeat left -560px;
+  margin-left:5px;
+  display:inline-block;
+}
+.g-ic_video_text {
+  width:14px;
+  height:10px;
+  background: url('../img/project.png') no-repeat -13px -560px;
+  _background: url('../img/project.gif') no-repeat -13px -560px;
+  margin-left:5px;
+  display:inline-block;
+}
+.g-ic_close {
+    background: url('../img/project.png') no-repeat -958px 0px;
+    _background: url('../img/project.gif') no-repeat -958px 0px;
+    width:11px;
+    height:11px;
+}
+a:hover .g-ic_close {
+    background-position: -969px 0px;
+}
+.g-ic_del {
+    background: url('../img/project.png') no-repeat -15px -504px;
+    _background: url('../img/project.gif') no-repeat -15px -504px;
+    width:13px;
+    height:13px;
+}
+.g-ic_del:hover {
+  background-position: -28px -504px;
+}
+.g-ic_beta {
+    background: url('../img/project.png') no-repeat -913px -186px;
+    _background: url('../img/project.gif') no-repeat -913px -186px;
+    width:67px;
+    height:22px;
+}
+.g-ic_new {
+  width:8px;
+  height:8px;
+  background: url('../img/project.png') no-repeat -954px -208px;
+  _background: url('../img/project.gif') no-repeat -954px -208px;
+}
+.g-ic_id {
+  width:17px;
+  height:17px;
+  background: url('../img/project.png') no-repeat -18px -4px;
+  _background: url('../img/project.gif') no-repeat -18px -4px;
+  vertical-align:middle;
+  position:relative;
+  margin:-1px 3px -3px 3px;
+}
+
+.g-ic_video_time {
+  display:block;
+  width:30px;
+  height:18px;
+  background: url('../img/project.png') no-repeat -128px -437px;
+  _background: url('../img/project.gif') no-repeat -128px -437px;
+  position:absolute;
+  bottom:0px;
+  right:0px;
+  color:#fff;
+  font-size:11px;
+  text-align:center;
+  padding-top:1px;
+}
+
+.g-ic_rss {
+  width:11px;
+  height:11px;
+  background: url('../img/project.png') no-repeat -705px -186px;
+  _background: url('../img/project.gif') no-repeat -705px -186px;
+  margin-left:10px;
+  margin-top:-1px;
+}
+.g-ic_voted {
+  width:10px;
+  height:11px;
+  background: url('../img/project.png') no-repeat -463px -186px;
+  _background: url('../img/project.gif') no-repeat -463px -186px;
+}
+.g-ic_adv_small {
+  height:10px;
+  width:39px;
+  background: url('../img/project.png') no-repeat -54px -456px;
+  _background: url('../img/project.gif') no-repeat -54px -456px;
+}
+.g-ic_expand {
+  display:inline-block;
+  height:3px;
+  width:5px;
+  background: url('../img/project.png') no-repeat -453px -186px;
+  _background: url('../img/project.gif') no-repeat -453px -186px;
+  overflow:hidden;
+}
+.g-ic_winner {
+  display:inline-block;
+  width:29px;
+  height:56px;
+  background: url('../img/ic_winner.png') no-repeat top left;
+  overflow:hidden;
+  position:absolute;
+  top:-3px;
+  right:-8px;
+}
+
+/*end global icons*/
+/*content*/
+a.g-h:hover + div h6 a.g-h2,
+a.g-h:hover + a.g-h2,
+a.g-h:hover + div a.g-h2 {
+  color:#982339;
+}
+.b-pop_tags {
+  padding: 9px;
+  width:302px;
+  overflow:hidden;
+  float:left;
+  background: #fff;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+}
+.b-pop_tags_m {
+  width:632px !important;
+  border:0px !important;
+  background: #F5F5F5;
+}
+.b-pop_tags_a {
+  line-height:normal;
+  word-spacing:5px;
+  width:302px;
+  overflow:hidden;
+}
+.b-pop_tags_m .b-pop_tags_a {
+  width:632px !important;
+}
+.b-pop_tags_a a {
+  color:#888888;
+  word-spacing:0px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  padding:0 3px 2px;
+  line-height:24px;
+  line-height/*\**/:1.6\9;     /*ie8 don`t touch -- it`s magic.*/
+}
+.b-pop_tags_a a:hover {
+	background-color:#D1EFC9;
+	color:#1359A7;
+	text-decoration:none;
+}
+hr {
+    height: 1px;
+    border:0px;
+    background: #EFE9E2;
+    border-color:#EFE9E2;
+    color: #EFE9E2;
+}
+.b-hr {
+    font-size:0px;
+    height:1px;
+    overflow:hidden;
+    background: #e5e5e5;
+    clear:both;
+}
+/*end *content**/
+/*forms*/
+.g-textar,
+.g-inp {
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    border:1px #D6D6D6 solid;
+    padding:3px;
+}
+/*end forms*/
+
+
+
+/*login forms*/
+.b-login {
+  width:260px;
+}
+.b-login_bord {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  background:url('../img/bg_popups.png') repeat 0 0;
+  padding:10px;
+}
+.b-login_cont {
+  background: #fff;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  padding:6px 10px 10px;
+}
+.b-login_btn {
+  width:75px;
+  height:30px;
+  background: url('../img/project.png') no-repeat -838px -186px;
+  _background: url('../img/project.gif') no-repeat -838px -186px;
+  border:none;
+  cursor:pointer;
+}
+.b-login_btn:hover {
+  background-position: -838px -216px;
+}
+.b-login a {
+  color:#5781b5;
+}
+.b-login_areg {
+  margin-top:8px;
+}
+.b-login .c-gray {
+  color:#555;
+}
+.b-login_inp {
+  border:1px #cacaca solid;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  width:208px;
+  padding:5px 5px 6px;
+  font-size:14px;
+  margin-top: 3px;
+}
+.b-login_inp_cur {
+  border:1px #b0b0b0 solid;
+}
+.b-login_check {
+  vertical-align:middle;
+  margin:0 5px 0 0px;
+}
+.b-login_close {
+  margin-top:4px;
+}
+.b-login_top {
+  background: #fff;
+  -moz-border-radius:4px 4px 0px 0px;
+  padding:15px 20px 20px;
+}
+.b-login_bottom {
+  background: #efefef;
+  -moz-border-radius:0px 0px 4px 4px;
+  padding:12px 15px 14px;
+  border-top:1px #e7e7e7 solid;
+  text-align:right;
+}
+.b-login_bottom .c-gray {
+  color:#888;
+}
+/*end login forms*/
+
+/*b-popup_makehp */
+.b-popup_makehp {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  background: #fff;
+  padding:15px 20px 20px;
+  width:350px;
+  margin-left:-195px;
+}
+
+/*b-obzor_seti_box*/
+.b-obzor_seti {
+  padding:6px 10px 0;
+}
+.b-obzor_seti_box {
+  width:120px;
+  margin-right:40px;
+  float:left
+}
+.b-obzor_seti_box span {
+  margin-top:5px;
+  display:block;
+}
+.b-aukro {
+  background:url("../img/aukro.gif") no-repeat left top;
+  margin-top:-16px;
+}
+.b-aukro a {
+  padding:23px 0 0;
+  display:block;
+}
+.b-aukro img {
+  margin:0 7px 3px;
+}
+.b-aukro_last {
+  margin:-16px 0 0 0;
+}
+/*end b-obzor_seti_box*/
+
+/* message & email header v2 */
+.g-message_block, .g-message_block_empty, .g-email_block, .g-email_block_empty {
+  position: relative;
+}
+.g-message_block i, .g-email_block i {
+  position: absolute;
+  display: block;
+  color: #212121;
+  font-size: 11px;
+  top: -7px;
+  left: 12px;
+  font-style:normal;
+  font-weight: 700;
+  height: 11px;
+  line-height: 11px;
+}
+.g-message_block img, .g-message_block_empty img, .g-email_block img, .g-email_block_empty img {
+  background: url('../img/project.png') no-repeat;
+  _background: url('../img/project.gif') no-repeat;
+  width: 16px;
+  height: 15px;
+  vertical-align: middle;
+}
+.g-message_block img {
+	background-position: -130px -476px;
+}
+.g-email_block img {
+	background-position: -114px -476px;
+}
+.g-message_block_empty img {
+	background-position: -130px -491px;
+}
+.g-email_block_empty img {
+	background-position: -114px -491px;
+}
+/* message & email end header v2*/
+
+
+/*b-favorites
+.b-favorites {
+  margin:1px 30px 0 0;
+  float:left;
+}
+.g-ic_favorites a {
+  display:block;
+  float:left;
+}
+.g-ic_favorites a img {
+  width:13px;
+  height:14px;
+  float:left;
+  background: url('../img/project.png') no-repeat;
+  _background: url('../img/project.gif') no-repeat;
+}
+.g-ic_favorites_add a img {
+  background-position: -544px -186px;
+}
+.g-ic_favorites_del a img {
+  background-position: -544px -200px;
+}*/
+.ic_favorite,
+.ic_infavorite {
+  display:inline-block;
+  margin-right:10px;
+  vertical-align:middle;
+  background: url('../img/social_icons.png') -137px 0px;
+  filter:alpha(opacity=65);
+  opacity:0.65;
+  width:26px;
+  height:26px;
+}
+.ic_infavorite {
+  background-position: -164px 0px;
+}
+/*end b-favorites*/
+
+
+
+
+/*b-infomess*/
+.b-infomess_good,
+.b-infomess_bad{
+  padding:10px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  font-size:11px;
+  line-height:15px;
+  overflow:hidden;
+}
+
+.b-infomess_good {
+  background:#F2F2F2 url('../img/mess_good.gif') repeat-y top left;
+}
+.b-infomess_bad {
+  background:#F2F2F2 url('../img/mess_bad.gif') repeat-y top left;
+}
+.b-infomess .g-ic_close {
+  vertical-align:-2px;
+}
+/*end b-infomess*/
+
+/*-global_ban_all_bigmir--*/
+.global_ban_all_bigmir_img {
+  display:block;
+  height:70px;
+  width:320px;
+  background: url('http://bm.img.com.ua/a/common/img/banners/my_drive.png') no-repeat top left;
+  overflow:hidden;
+}
+/*-global_ban_all_bigmir--*/
+
+/* widgets */
+.b-widgets_980 {
+  width:980px;
+  overflow:hidden;
+  white-space: nowrap;
+}
+.b-widgets_980 a {
+  display:inline-block;
+  margin-right:10px;
+}
+.b-widgets_320 {
+  width:320px;
+  overflow:hidden;
+}
+/* end widgets */
+
+/* facebook_login */
+.g-facebook_login img {
+  vertical-align:-2px;
+}
+/* end facebook_login */
+
+/* editor_links */
+.b-editor_links {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  padding:5px 10px;
+  background: #F5F5F5;
+}
+.b-editor_links ul {
+  display:inline-block;
+}
+.b-editor_links li {
+  display:inline-block;
+  padding:0px;
+  background: none;
+  margin-left:15px;
+  font-weight:bold;
+}
+
+/* end  editor_links */
+
+
+/*header_pop_serv  -- inform*/
+.ic_header_weather,
+.ic_header_goroskop {
+  vertical-align:-7px;
+  margin:-6px 3px 0 0;
+}
+.popup_header {
+	position:absolute;
+	z-index:100;
+	top:30px !important;
+	border:1px solid #ccc;
+	background-color:#fff;
+	overflow:hidden;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	o-border-radius: 3px;
+	-webkit-box-shadow: 0px 0px 5px #B9B9B9;
+	-moz-box-shadow: 0px 0px 5px #B9B9B9;
+	box-shadow: 0px 0px 5px #B9B9B9;
+	filter: progid:DXImageTransform.Microsoft.Shadow(color='#B9B9B9', Direction=-135, Strength=5);
+	padding: 10px;
+}
+.popup_weather {
+  width:610px;
+  right:50px;
+}
+.popup_weather_h,
+.popup_finance_h {
+  font-size:16px;
+  font-weight:bold;
+}
+.popup_weather_ua {
+  width:440px;
+}
+.popup_weather_hr {
+  display:block;
+  clear:both;
+  font-size:1px;
+  height:1px;
+  overflow:hidden;
+  line-height:1px;
+  background: #dbe7ee;
+  margin: 3px 0;
+}
+.popup_weather_ua .popup_weather_hr {
+  margin-left:-10px;
+}
+.popup_weather ul {
+  width: 145px;
+}
+.popup_weather li {
+  list-style-type: none;
+  padding: 1px 0 4px;
+  color: #ADC6D4;
+  list-style: disc inside none;
+}
+.popup_weather li span {
+  color:#333;
+}
+
+.popup_weather_world {
+  width:145px;
+}
+.popup_weather_world .popup_weather_hr {
+  margin-right:-10px;
+  margin-left:-10px;
+}
+
+.popup_header .c-gray {
+  color:#888 !important;
+}
+.header_inform .ic_finance_down  {
+  margin:-2px 3px 0 0;
+}
+.popup_finance {
+  width:300px;
+  right:60px;
+}
+.popup_finance table {
+  margin:0 -10px;
+  width:320px;
+}
+.popup_finance th {
+  background-color: #F1EFE5;
+  font-weight: 400;
+  padding: 6px 9px 6px 9px;
+  color:#888;
+  font-weight:normal
+}
+.popup_finance td {
+  border-bottom: 1px solid #F1EFE5;
+  padding: 6px 9px 6px 6px;
+}
+.popup_finance_tab a {
+  background: #fff;
+  margin:3px 10px 4px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  color: #008000;
+  display:inline-block;
+}
+.popup_finance_tab a.popup_finance_tab_cur {
+  background: #D8EFC5;
+  padding:3px 10px 4px;
+  font-weight:bold;
+  margin:0px;
+}
+.ic_header_finance {
+  margin:-3px 3px 0 0;
+}
+.ic_finance_up,
+.ic_finance_down {
+  display:inline-block;
+  height: 9px;
+  width: 9px;
+  background: url('../img/finance_str.png');
+  background-repeat: no-repeat;
+}
+.ic_finance_up {
+  background-position: top left;
+}
+.ic_finance_down {
+  background-position: top right;
+}
+.popup_finance .ic_finance_up,
+.popup_finance .ic_finance_down {
+  margin-left:5px;
+}
+.popup_finance_tdpad {
+  padding-right:23px !important;
+}
+.popup_goroskop a {
+  background-position: 50% 20%;
+  background-repeat: no-repeat;
+  padding-top: 80px;
+  width: 79px;
+  text-align:center;
+  display:inline-block;
+  *display:block;
+  *float:left;
+}
+.popup_goroskop {
+   width:958px;
+   left:10px;
+   padding:10px 0;
+}
+/*header_pop_serv*/
+
+/* b-network */
+.b-network {
+  padding:0 10px;
+}
+.b-network_h {
+  margin-bottom:6px;
+}
+.b-network_box {
+  float:left;
+  width: 120px;
+  margin-right:40px;
+  min-height: 84px;
+}
+.b-network_img {
+  margin-bottom:2px;
+  display:block;
+}
+.b-network_from,
+.b-network_from_logo {
+  display:block;
+}
+.b-network_from_logo {
+  margin-bottom:5px;
+  margin-top:-28px;
+}
+
+
+.b-partner_logo {
+  position:absolute;
+  right:10px;
+  top:10px;
+  width:55px;
+  height:55px;
+  display:block;
+}
+
+.b-partner_logo2 {
+  position:absolute;
+  right:5px;
+  bottom:5px;
+  width:35px;
+  height:35px;
+  display:block;
+}
+
+
+
+/*network_carousel*/
+/*
+.gb-network_carousel .gb-network_carousel_str {
+  display:none;
+}*/
+
+.b-header_l {
+  height:19px;
+}
+</pre>
+<h2>plugins/b-laset+articles.css</h2>
+<pre>
+/*popular artical*/
+.b-last_articles {
+  overflow:hidden;
+  width:302px;
+  float:left;
+  padding:9px;
+  background: #fff;
+  border-radius: 5px;
+  -moz-border-radius:5px;
+  -webkit-border-radius: 5px;
+}
+.b-last_articles_hr {
+  font-size:0px;
+  height:1px;
+  overflow:hidden;
+  background: #efe9e2;
+  margin:4px 0;
+}
+.b-last_articles_article {
+  margin-right:6px;
+}
+.b-last_articles_section {
+  font-size:11px;
+  color:#888;
+}
+.b-last_articles_section:hover {
+  color:#982339;
+}
+.b-last_articles_article_date {
+  font-size:11px;
+  color:#888;
+  margin-right:6px;
+}
+/*end *popular artical*/
+</pre>
+
+<h2>plugins/b-tabs.css</h2>
+
+<pre>
+/*b-tabs*/
+
+.b-tabs {
+	float: left;
+	margin-left: -9px;
+	}
+.b-tabs a {
+	float: left;
+	margin: 0 10px;
+	padding-top: 2px;
+	font-size: 14px;
+	color: #c43c00;
+	}
+.b-tabs b {
+	display: block;
+	float: left;
+	margin-right: 5px;
+	padding-top: 1px;
+	font-size: 11px;
+	}
+.b-tabs_cur {
+	display: block;
+	float: left;
+	height: 21px;
+	margin: 0 12px 0 4px !important;
+	padding: 0 0 0 10px !important;
+	cursor: pointer;
+	background: url("../../img/project.png") no-repeat -200px -654px;
+	color: #333 !important;
+	font-weight: bold;
+	}
+.b-tabs_cur span {
+	display: block;
+	position: relative;
+	height: 19px;
+	margin-right: -8px;
+	padding: 2px 10px 0 0;
+	background: url("../../img/project.png") no-repeat right -654px;
+	}
+
+/*b-tabs_small*/
+
+.b-tabs_small {
+	margin-left: 0;
+	}
+.b-tabs_small a {
+	margin: 0 5px;
+	padding-top: 1px;
+	font-size: 11px;
+	}
+.b-tabs_small .b-tabs_cur {
+	height: 19px;
+	margin: 0 13px 0 5px !important;
+	padding: 0 0 0 10px !important;
+	background: url("../../img/project.png") no-repeat -200px -675px;
+	}
+.b-tabs_small .b-tabs_cur span {
+	display: block;
+	height: 18px;
+	padding: 1px 10px 0 0;
+	background: url("../../img/project.png") no-repeat right -675px;
+	}
+
+/*end b-tabs_small*/
+
+.b-tabs_first {
+	background: none;
+	}
+.b-tabs_cur.b-tabs_first {
+	padding: 0 !important;
+	margin-left: 0 !important;
+	}
+.b-tabs_cur.b-tabs_first span {
+	padding-left: 10px;
+	}
+
+/*end b-tabs*/
+
+</pre>
+
+<h2>different types of attributes</h2>
+<pre>
+
+</pre>
+
+<h2>html5 tags example</h2>
+
+<pre></pre>
+
+
+<h2>schema.org</h2>
+
+<pre>
+&lt;article class="b-show" itemscope itemtype="http://schema.org/VideoObject"&gt;
+	&lt;div class="b-block g-clearfix"&gt;
+		&lt;header class="b-block__header-outer"&gt;
+			&lt;h1 class="b-block__header" itemprop="name"&gt;Title&lt;/h1&gt;
+		&lt;/header&gt;
+		&lt;div class="b-show__description" itemprop="description"&gt;
+			&lt;p&gt;Description&lt;/p&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/article&gt;
+</pre>
+
+<pre>
+<article class="b-show" itemscope itemtype="http://schema.org/VideoObject">
+	<div class="b-block g-clearfix">
+		<header class="b-block__header-outer">
+			<h1 class="b-block__header" itemprop="name">Title</h1>
+		</header>
+		<div class="b-show__description" itemprop="description">
+			<p>Description</p>
+		</div>
+	</div>
+</article>
+</pre>
+
+
+
+
+<pre>
+<!doctype html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="..." type="text/css" />
+<script src="..." type="text/javascript"></script>
+
+
+<!doctype html>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="..." />
+<script src="..."></script>
+</pre>
+
+<pre>
+<div class="item">
+	<div class="item-image-container">
+		<img class="item-image" src="..." />
+	</div>
+	<div class="item-content">
+		<div class="item-title">Lorem Ipsum</div>
+		<div class="item-pubdate">December 2, 2014</div>
+	</div>
+</div>
+
+<div class="item">
+	<figure class="item-figure">
+		<div class="item-image-container">
+			<img class="item-image" src="..." />
+		</div>
+		<div class="item-content">
+			<figcaption class="item-title-container">
+				<h2 class="item-title">Lorem Ipsum</h2>
+			</figcaption>
+			<time class="item-pubdate" pubdate>December 2, 2014</time>
+		</div>
+	</figure>
+</div>
+</pre>
+
+
+<pre>
+	<section class="b-block b-media" data-bmm="col2">
+		<ul class="b-block__list">
+			<li class="b-block__list-item ">
+				<a class="b-block__list-item__link" href="http://ivona.bigmir.net/beauty/news/403727-56-letnjaja-Madonna-pozirovala-toples-dlja-Interview" data-itemid="1773952">
+					<figure class="b-block__list-item__figure">
+						<img class="b-block__list-item__image" width="220" src="http://bm.img.com.ua/img/hp/1773952.jpg" alt="">
+					</figure>
+				</a>
+				<h4 class="b-block__list-item__title-outer">
+				<a class="b-block__list-item__title" href="http://s.bigmir.net/bm_clicks/?&amp;zone=content.col2&amp;project=www&amp;project_copy=www_split2&amp;url=http%3A%2F%2Fs.bigmir.net%2Fhp%2F%3Fclicks%3D1%26%26track_zone%3D%26id%3D1773952%26goto_url%3Dhttp%253A%252F%252Fivona.bigmir.net%252Fbeauty%252Fnews%252F403727-56-letnjaja-Madonna-pozirovala-toples-dlja-Interview&amp;surl=" data-itemid="1773952"><span class="b-block__list-item__title-inner">56-летняя Мадонна позировала топлес для Interview</span></a>
+			</h4>
+			</li>
+			<li class="b-block__list-item ">
+				<a class="b-block__list-item__link" href="http://news.bigmir.net/ukraine/862659-Ministri-inostranci-otkazivautsya-ot-svoih-grajdanstv" data-itemid="1775035">
+					<figure class="b-block__list-item__figure">
+						<img class="b-block__list-item__image" width="220" src="http://bm.img.com.ua/img/hp/1775035.jpg" alt="">
+					</figure>
+					<div class="b-block__list-item__icon-container"></div>
+				</a><h4 class="b-block__list-item__title-outer">
+				<a class="b-block__list-item__title" href="http://news.bigmir.net/ukraine/862659-Ministri-inostranci-otkazivautsya-ot-svoih-grajdanstv" data-itemid="1775035"><span class="b-block__list-item__title-inner">Министры-иностранцы отказываются от своих гражданств</span></a>
+			</h4>
+			</li>
+			<li class="b-block__list-item b-block__list-item_exclusive">
+				<header class="b-block__list-item__header">Выбор редакции</header>
+				<a class="b-block__list-item__link" href="http://news.bigmir.net/life/862631-Pozitiv-dnja--Skazka-pro-majdan--dom-molodezhi-i-podarki-k-Novomu-godu" data-itemid="1774698">
+					<figure class="b-block__list-item__figure">
+						<img class="b-block__list-item__image" width="220" src="http://bm.img.com.ua/img/hp/1774698.jpg" alt="">
+					</figure>
+					<div class="b-block__list-item__icon-container">
+						<span class="b-block__list-item__icon b-block__list-item__icon_photo"></span><span class="b-block__list-item__icon b-block__list-item__icon_video"></span>
+					</div>
+				</a><h4 class="b-block__list-item__title-outer">
+				<a class="b-block__list-item__title" href="http://news.bigmir.net/life/862631-Pozitiv-dnja--Skazka-pro-majdan--dom-molodezhi-i-podarki-k-Novomu-godu" data-itemid="1774698"><span class="b-block__list-item__title-inner">Позитив дня: Сказка про Майдан, новый коворкинг в Киеве и пряничные домики</span></a>
+			</h4>
+			</li>
+			<li class="b-block__list-item ">
+				<a class="b-block__list-item__link" href="http://mport.ua/adult/1579190-Samye-seksual-nye--TOP-10-zhencshin-goda-ot-GQ" data-itemid="1774451">
+					<figure class="b-block__list-item__figure">
+						<img class="b-block__list-item__image" width="220" src="http://bm.img.com.ua/img/hp/1774451.jpg" alt="">
+					</figure>
+					<div class="b-block__list-item__icon-container">
+						<span class="b-block__list-item__icon b-block__list-item__icon_photo"></span></div>
+				</a>
+				<h4 class="b-block__list-item__title-outer">
+					<a class="b-block__list-item__title" href="http://mport.ua/adult/1579190-Samye-seksual-nye--TOP-10-zhencshin-goda-ot-GQ" data-itemid="1774451"><span class="b-block__list-item__title-inner">Самые сексуальные: ТОП-10 женщин года от GQ</span></a>
+				</h4>
+			</li>
+			<li class="b-block__list-item ">
+				<a class="b-block__list-item__link" href="http://afisha.bigmir.net/movie/news/216936-Putin-stanceval-v-fil-me-Zheleznoe-nebo-2" data-itemid="1774436">
+					<figure class="b-block__list-item__figure">
+						<img class="b-block__list-item__image" width="220" src="http://bm.img.com.ua/img/hp/1774436.jpg" alt="">
+					</figure>
+					<div class="b-block__list-item__icon-container">
+						<span class="b-block__list-item__icon b-block__list-item__icon_video"></span></div>
+				</a><h4 class="b-block__list-item__title-outer">
+				<a class="b-block__list-item__title" href="http://afisha.bigmir.net/movie/news/216936-Putin-stanceval-v-fil-me-Zheleznoe-nebo-2" data-itemid="1774436"><span class="b-block__list-item__title-inner">Путин станцевал в фильме Железное небо 2</span></a>
+			</h4>
+			</li>
+			<li class="b-block__list-item ">
+				<a class="b-block__list-item__link" href="http://news.bigmir.net/life/862512-Zabavnye-sobaki--kotorye-ne-pohozhi-na-sebja" data-itemid="1774221">
+					<figure class="b-block__list-item__figure">
+						<img class="b-block__list-item__image" width="220" src="http://bm.img.com.ua/img/hp/1774221.jpg" alt="">
+					</figure>
+					<div class="b-block__list-item__icon-container">
+						<span class="b-block__list-item__icon b-block__list-item__icon_photo"></span></div>
+				</a><h4 class="b-block__list-item__title-outer">
+				<a class="b-block__list-item__title" href="http://news.bigmir.net/life/862512-Zabavnye-sobaki--kotorye-ne-pohozhi-na-sebja" data-itemid="1774221"><span class="b-block__list-item__title-inner">Забавные собаки, которые не похожи на себя</span></a>
+			</h4>
+			</li>
+			<li class="b-block__list-item ">
+				<a class="b-block__list-item__link" href="http://finance.bigmir.net/news/mmedia_and_adv/52093-Nazvana-samaja-luchshaja-reklama-v-Ukraine" data-itemid="1773541">
+					<figure class="b-block__list-item__figure">
+						<img class="b-block__list-item__image" width="220" src="http://bm.img.com.ua/img/hp/1773541.jpg" alt="">
+					</figure>
+					<div class="b-block__list-item__icon-container">
+						<span class="b-block__list-item__icon b-block__list-item__icon_video"></span></div>
+				</a><h4 class="b-block__list-item__title-outer">
+				<a class="b-block__list-item__title" href="http://finance.bigmir.net/news/mmedia_and_adv/52093-Nazvana-samaja-luchshaja-reklama-v-Ukraine" data-itemid="1773541"><span class="b-block__list-item__title-inner">Названа самая лучшая реклама в Украине</span></a>
+			</h4>
+			</li>
+			<li class="b-block__list-item ">
+				<a class="b-block__list-item__link" href="http://sport.bigmir.net/football/ukraine/1687215-Jarmolenko--Ves--chempionat-v-snegu--budto-v-Antarktide-igraem" data-itemid="1773622">
+					<figure class="b-block__list-item__figure">
+						<img class="b-block__list-item__image" width="220" src="http://bm.img.com.ua/img/hp/1773622.jpg" alt="">
+					</figure>
+					<div class="b-block__list-item__icon-container"></div>
+				</a><h4 class="b-block__list-item__title-outer">
+				<a class="b-block__list-item__title" href="http://sport.bigmir.net/football/ukraine/1687215-Jarmolenko--Ves--chempionat-v-snegu--budto-v-Antarktide-igraem" data-itemid="1773622"><span class="b-block__list-item__title-inner">Ярмоленко: Весь чемпионат в снегу, будто в Антарктиде играем</span></a>
+			</h4>
+			</li>
+			<li class="b-block__list-item ">
+				<a class="b-block__list-item__link" href="http://news.bigmir.net/ukraine/862516-V-MVD-pokazali-komplekt-teploj-odezhdy-dlja-bojcov-na-Donbasse" data-itemid="1774219">
+					<figure class="b-block__list-item__figure">
+						<img class="b-block__list-item__image" width="220" src="http://bm.img.com.ua/img/hp/1774219.jpg" alt="">
+					</figure>
+					<div class="b-block__list-item__icon-container"></div>
+				</a><h4 class="b-block__list-item__title-outer">
+				<a class="b-block__list-item__title" href="http://news.bigmir.net/ukraine/862516-V-MVD-pokazali-komplekt-teploj-odezhdy-dlja-bojcov-na-Donbasse" data-itemid="1774219"><span class="b-block__list-item__title-inner">В МВД показали комплект теплой одежды для бойцов на Донбассе</span></a>
+			</h4>
+			</li>
+			<li class="b-block__list-item ">
+				<a class="b-block__list-item__link" href="http://news.bigmir.net/ukraine/862621-Ykrainec-vernylsya-iz-SShA-chtobi-voevat-v-zone-ATO" data-itemid="1774641">
+					<figure class="b-block__list-item__figure">
+						<img class="b-block__list-item__image" width="220" src="http://bm.img.com.ua/img/hp/1774641.jpg" alt="">
+					</figure>
+					<div class="b-block__list-item__icon-container"></div>
+				</a><h4 class="b-block__list-item__title-outer">
+				<a class="b-block__list-item__title" href="http://news.bigmir.net/ukraine/862621-Ykrainec-vernylsya-iz-SShA-chtobi-voevat-v-zone-ATO" data-itemid="1774641"><span class="b-block__list-item__title-inner">Украинец вернулся из США, чтобы воевать в зоне АТО</span></a>
+			</h4>
+			</li>
+			<li class="b-block__list-item ">
+				<a class="b-block__list-item__link" href="http://sport.bigmir.net/boks/amateur/1687273-Protivnik-Mikki-Rurka--Ja-ne-slival-boj--prosto-u-menja-byl-mesjac-na-podgotovku" data-itemid="1774646">
+					<figure class="b-block__list-item__figure">
+						<img class="b-block__list-item__image" width="220" src="http://bm.img.com.ua/img/hp/1774646.jpg" alt="">
+					</figure>
+					<div class="b-block__list-item__icon-container"></div>
+				</a><h4 class="b-block__list-item__title-outer">
+				<a class="b-block__list-item__title" href="http://sport.bigmir.net/boks/amateur/1687273-Protivnik-Mikki-Rurka--Ja-ne-slival-boj--prosto-u-menja-byl-mesjac-na-podgotovku" data-itemid="1774646"><span class="b-block__list-item__title-inner">Противник Микки Рурка: Я не сливал бой, просто у меня был месяц на подготовку</span></a>
+			</h4>
+			</li>
+			<li class="b-block__list-item ">
+				<a class="b-block__list-item__link" href="http://techno.bigmir.net/discovery/1579187-Kosmicheskaja-svjaz---Ispytana-lazernaja-sistema-peredacha-dannyh" data-itemid="1774638">
+					<figure class="b-block__list-item__figure">
+						<img class="b-block__list-item__image" width="220" src="http://bm.img.com.ua/img/hp/1774638.jpg" alt="">
+					</figure>
+					<div class="b-block__list-item__icon-container"></div>
+				</a><h4 class="b-block__list-item__title-outer">
+				<a class="b-block__list-item__title" href="http://techno.bigmir.net/discovery/1579187-Kosmicheskaja-svjaz---Ispytana-lazernaja-sistema-peredacha-dannyh" data-itemid="1774638"><span class="b-block__list-item__title-inner">Космическая связь: Испытана лазерная система передача данных</span></a>
+			</h4>
+			</li>
+			<li class="b-block__list-item ">
+				<a class="b-block__list-item__link" href="http://ivona.bigmir.net/beauty/zvezdniy_stil/403719-Britain-Fashion-Awards-2014--Zvezdy-na-krasnoj-dorozhke" data-itemid="1773763">
+					<figure class="b-block__list-item__figure">
+						<img class="b-block__list-item__image" width="220" src="http://bm.img.com.ua/img/hp/1773763.jpg" alt="">
+					</figure>
+					<div class="b-block__list-item__icon-container">
+						<span class="b-block__list-item__icon b-block__list-item__icon_photo"></span></div>
+				</a><h4 class="b-block__list-item__title-outer">
+				<a class="b-block__list-item__title" href="http://ivona.bigmir.net/beauty/zvezdniy_stil/403719-Britain-Fashion-Awards-2014--Zvezdy-na-krasnoj-dorozhke" data-itemid="1773763"><span class="b-block__list-item__title-inner">Britain Fashion Awards 2014: Звезды на красной дорожке</span></a>
+			</h4>
+			</li>
+			<li class="b-block__list-item ">
+				<a class="b-block__list-item__link" href="http://sport.bigmir.net/football/england/1687242-Mario-Balotelli-izvinilsja-za-svoju-skandal-nuju-shutku" data-itemid="1774220">
+					<figure class="b-block__list-item__figure">
+						<img class="b-block__list-item__image" width="220" src="http://bm.img.com.ua/img/hp/1774220.jpg" alt="">
+					</figure>
+					<div class="b-block__list-item__icon-container"></div>
+				</a><h4 class="b-block__list-item__title-outer">
+				<a class="b-block__list-item__title" href="http://sport.bigmir.net/football/england/1687242-Mario-Balotelli-izvinilsja-za-svoju-skandal-nuju-shutku" data-itemid="1774220"><span class="b-block__list-item__title-inner">Марио Балотелли извинился за свою скандальную шутку</span></a>
+			</h4>
+			</li>
+			<li class="b-block__list-item ">
+				<a class="b-block__list-item__link" href="http://news.bigmir.net/ukraine/862628-V-Donecke-proizoshla-avariya-s-ychastiem-voennoi-policii-DNR" data-itemid="1774639">
+					<figure class="b-block__list-item__figure">
+						<img class="b-block__list-item__image" width="220" src="http://bm.img.com.ua/img/hp/1774639.jpg" alt="">
+					</figure>
+					<div class="b-block__list-item__icon-container">
+						<span class="b-block__list-item__icon b-block__list-item__icon_video"></span></div>
+				</a><h4 class="b-block__list-item__title-outer">
+				<a class="b-block__list-item__title" href="http://news.bigmir.net/ukraine/862628-V-Donecke-proizoshla-avariya-s-ychastiem-voennoi-policii-DNR" data-itemid="1774639"><span class="b-block__list-item__title-inner">В Донецке произошла авария с участием "военной полиции" ДНР</span></a>
+			</h4>
+			</li>
+			<li class="b-block__list-item ">
+				<a class="b-block__list-item__link" href="http://auto.bigmir.net/autonews/roads/1579200-V-Kieve-s-pomocsh-ju-evakuatora-pohitili-Porsche-Panamera" data-itemid="1774440">
+					<figure class="b-block__list-item__figure">
+						<img class="b-block__list-item__image" width="220" src="http://bm.img.com.ua/img/hp/1774440.jpg" alt="">
+					</figure>
+					<div class="b-block__list-item__icon-container"></div>
+				</a><h4 class="b-block__list-item__title-outer">
+				<a class="b-block__list-item__title" href="http://auto.bigmir.net/autonews/roads/1579200-V-Kieve-s-pomocsh-ju-evakuatora-pohitili-Porsche-Panamera" data-itemid="1774440"><span class="b-block__list-item__title-inner">В Киеве с помощью эвакуатора похитили Porsche Panamera</span></a>
+			</h4>
+			</li>
+			<li class="b-block__list-item ">
+				<a class="b-block__list-item__link" href="http://news.bigmir.net/capital/862592-Vozle-stancii-metro-Politehnicheskij-institut-prorvalo-teplotrassu-" data-itemid="1774481">
+					<figure class="b-block__list-item__figure">
+						<img class="b-block__list-item__image" width="220" src="http://bm.img.com.ua/img/hp/1774481.jpg" alt="">
+					</figure>
+					<div class="b-block__list-item__icon-container">
+						<span class="b-block__list-item__icon b-block__list-item__icon_photo"></span></div>
+				</a><h4 class="b-block__list-item__title-outer">
+				<a class="b-block__list-item__title" href="http://news.bigmir.net/capital/862592-Vozle-stancii-metro-Politehnicheskij-institut-prorvalo-teplotrassu-" data-itemid="1774481"><span class="b-block__list-item__title-inner">Все в тумане: Возле станции метро Политехнический институт прорвало теплотрассу</span></a>
+			</h4>
+			</li>
+			<li class="b-block__list-item ">
+				<a class="b-block__list-item__link" href="http://news.bigmir.net/ukraine/862567-Yarosh-o-naznachenii-inostrancev-ministrami-Eto-kompleks-nepolnocennosti" data-itemid="1774438">
+					<figure class="b-block__list-item__figure">
+						<img class="b-block__list-item__image" width="220" src="http://bm.img.com.ua/img/hp/1774438.jpg" alt="">
+					</figure>
+					<div class="b-block__list-item__icon-container">
+						<span class="b-block__list-item__icon b-block__list-item__icon_video"></span></div>
+				</a><h4 class="b-block__list-item__title-outer">
+				<a class="b-block__list-item__title" href="http://news.bigmir.net/ukraine/862567-Yarosh-o-naznachenii-inostrancev-ministrami-Eto-kompleks-nepolnocennosti" data-itemid="1774438"><span class="b-block__list-item__title-inner">Ярош о назначении иностранцев министрами: Это комплекс неполноценности</span></a>
+			</h4>
+			</li>
+			<li class="b-block__list-item ">
+				<a class="b-block__list-item__link" href="http://news.bigmir.net/ukraine/862549-Poroshenko-dal-ykrainskoe-grajdanstvo-trem-kandidatam-v-ministri" data-itemid="1774336">
+					<figure class="b-block__list-item__figure">
+						<img class="b-block__list-item__image" width="220" src="http://bm.img.com.ua/img/hp/1774336.jpg" alt="">
+					</figure>
+					<div class="b-block__list-item__icon-container"></div>
+				</a><h4 class="b-block__list-item__title-outer">
+				<a class="b-block__list-item__title" href="http://news.bigmir.net/ukraine/862549-Poroshenko-dal-ykrainskoe-grajdanstvo-trem-kandidatam-v-ministri" data-itemid="1774336"><span class="b-block__list-item__title-inner">Порошенко дал украинское гражданство трем кандидатам в министры</span></a>
+			</h4>
+			</li>
+		</ul>
+	</section>
+</pre>
+
+
+<style type="text/less">
+.block {
+
+	@color: #fe57a1;
+
+	color: @color;
+
+	&__element {
+		background: rgba()
+		}
+	}
+
+	@color: #fe57a1;
+</style>
+
+
+
+
+<div class="item">
+	<div class="item-image-container">
+		<img class="item-image" src="..." />
+	</div>
+	<div class="item-content">
+		<div class="item-title">Lorem Ipsum</div>
+		<div class="item-pubdate">Dec 2, 2014</div>
+	</div>
+</div>
+
+
+
+
+<form method="get">
+	<input type="text" name="tel" />
+	<input type="password" name="pass" />
+	<input type="checkbox" name="save_pass" checked />
+	<input type="submit" value="OK" />
+</form>
+
+<FORM method=GET>
+	<input type="text" name=tel>
+	<INPUT type=password name=pass>
+	<input TYPE=checkbox name=save_pass checked=checked>
+	<input type=submit VALUE=OK>
+</FORM>
+
+
+
+<form method="get">
+	<input type="tel" name="tel" />
+	<input type="password" name="pass" />
+	<input type="checkbox" name="save_pass" checked />
+	<input type="submit" value="OK" />
+</form>

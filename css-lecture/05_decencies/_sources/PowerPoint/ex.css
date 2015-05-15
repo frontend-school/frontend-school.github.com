@@ -1,0 +1,25 @@
+.block {
+  background: #fe57a1;
+}
+.block__element {
+  color: rgba(254, 87, 161, 0.75);
+}
+.block {
+  background: #fe57a1;
+}
+.block__element {
+  color: rgba(254, 87, 161, 0.75);
+}
+.block {
+  background: #fe57a1;
+}
+.block__element {
+  color: rgba(254, 87, 161, 0.75);
+}
+.button {
+  display: inline-block;
+  padding: 6px 10px;
+  color: #fe57a1;
+  color-darken: #fe0b76;
+  color-test: #fe0b76;
+}
