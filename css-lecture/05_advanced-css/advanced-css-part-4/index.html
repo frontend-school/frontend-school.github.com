@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="ru"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Flexbox & Multi-column</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=1274, user-scalable=no">
+	<link rel="stylesheet" href="styles/screen.css">
+	<style>
+		#Cover h2 {
+			position:absolute;
+			top:50%;
+			right:-25%;
+			left:-25%;
+			margin:-1em 0 0;
+			padding:0.5em 0 0.55em;
+			background:rgba(255, 255, 234, 0.8);
+			color:#334445;
+			text-align:center;
+			font-size:100px;
+			}
+		#Cover .next {
+			opacity:0;
+			-webkit-transform-origin:50% 50%;
+			-webkit-transform:rotate(-20deg) scale(5);
+		    -webkit-transition:all 0.5s;
+			-moz-transform-origin:50% 50%;
+			-moz-transform:rotate(-20deg) scale(5);
+		    -moz-transition:all 0.5s;
+			-o-transform-origin:50% 50%;
+			-o-transform:rotate(-20deg) scale(5);
+		    -o-transition:all 0.5s;
+			transform-origin:50% 50%;
+			transform:rotate(-20deg) scale(5);
+		    transition:all 0.5s;
+			}
+		#Cover .next.active {
+			opacity:1;
+			-webkit-transform:rotate(-20deg) scale(1);
+			-moz-transform:rotate(-20deg) scale(1);
+			-o-transform:rotate(-20deg) scale(1);
+			transform:rotate(-20deg) scale(1);
+			}
+		.check {
+			width:115px;
+			vertical-align:-4%;
+			}
+		#Zoidberg {
+			background:#FFF url(pictures/zoidberg.png) 50% 100% no-repeat;
+			}
+		#Zoidberg h2 {
+			margin-top:-120px;
+			font-size:90px;
+			}
+	</style>
+	<link rel="stylesheet" href="styles/index.css">
+</head>
+<body class="list" cz-shortcut-listen="true">
+	<header class="caption">
+		<h1>Advanced CSS Часть 4</h1>
+	</header>
+	<section class="slide shout" id="2"><div>
+		<h2>Flexbox</h2>
+	</div></section>
+	<section class="slide shout" id="3"><div>
+		<h2><img class="check" src="pictures/check.svg" alt=""> 92,99%</h2>
+	</div></section>
+	<section class="slide cover" id="4"><div>
+		<img src="pictures/axis-container.svg" alt="">
+	</div></section>
+	<section class="slide cover" id="5"><div>
+		<img src="pictures/axis-row.svg" alt="">
+	</div></section>
+	<section class="slide shout" id="6"><div>
+		<h2>Оси</h2>
+	</div></section>
+	<section class="slide shout" id="7"><div>
+		<h2><span style="border-bottom:solid 0.13em">Главная</span></h2>
+	</div></section>
+	<section class="slide shout" id="8"><div>
+		<h2><span style="border-bottom:dotted 0.13em">Поперечная</span></h2>
+	</div></section>
+	<section class="slide cover" id="9"><div>
+		<img src="pictures/axis-row.svg" alt="">
+	</div></section>
+	<section class="slide cover" id="10"><div>
+		<img src="pictures/axis-row-arrow.svg" alt="">
+	</div></section>
+	<section class="slide cover" id="11"><div>
+		<img src="pictures/axis-row-bones.svg" alt="">
+	</div></section>
+	<section class="slide cover" id="12"><div>
+		<img src="pictures/axis-column.svg" alt="">
+	</div></section>
+	<section class="slide cover" id="13"><div>
+		<img src="pictures/axis-column-arrow.svg" alt="">
+	</div></section>
+	<section class="slide cover" id="14"><div>
+		<img src="pictures/axis-column-bones.svg" alt="">
+	</div></section>
+	<section class="slide" id="15"><div>
+		<h2>Алиса в стране чудес.</h2>
+		<pre>			<code>&lt;div class="<mark>novel</mark>"&gt;</code>
+			<code>    <mark>&lt;div&gt;</mark>Нельзя&lt;/div&gt;</code>
+			<code>    <mark>&lt;div&gt;</mark>поверить&lt;/div&gt;</code>
+			<code>    <mark>&lt;div&gt;</mark>в&lt;/div&gt;</code>
+			<code>    <mark>&lt;div&gt;</mark>невозможное&lt;/div&gt;</code>
+			<code>&lt;/div&gt;</code>
+		</pre>
+	</div></section>
+	<section class="slide" id="16"><div>
+		<h2>Алиса в стране чудес.</h2>
+		<pre>			<code><mark>.novel</mark> {</code>
+			<code>    overflow:hidden;</code>
+			<code>    height:<mark>640px</mark>;</code>
+			<code>    }</code>
+			<code>    .novel <mark>div</mark> {</code>
+			<code>        float:left;</code>
+			<code>        }</code>
+		</pre>
+	</div></section>
+	<section class="slide" id="17"><div>
+		<h2>Алиса в стране чудес.</h2>
+		<pre>			<code>.novel div<mark>:first-child</mark> {</code>
+			<code>    background:<span style="color:#090">#090</span>;</code>
+			<code>    }</code>
+			<code>.novel div<mark>:last-child</mark> {</code>
+			<code>    background:<span style="color:#C00">#C00</span>;</code>
+			<code>    }</code>
+		</pre>
+	</div></section>
+	<section class="slide shout" id="18"><div>
+		<div class="novel">
+			<div>Нельзя</div>
+			<div>поверить</div>
+			<div>в</div>
+			<div>невозможное</div>
+		</div>
+	</div></section>
+	<section class="slide" id="19"><div>
+		<h2>Включаем Flexbox</h2>
+		<pre>			<code>.novel {</code>
+			<code>    <mark>display:flex;</mark></code>
+			<code>    }</code>
+		</pre>
+	</div></section>
+	<section class="slide cover" id="20"><div>
+		<div class="novel flex axis-right">
+			<div>Нельзя</div>
+			<div>поверить</div>
+			<div>в</div>
+			<div>невозможное</div>
+		</div>
+	</div></section>
+	<section class="slide" id="21"><div>
+		<h2>Меняем направление по оси</h2>
+		<pre>			<code>.novel {</code>
+			<code>    display:flex;</code>
+			<code>    flex-direction:<mark>row</mark>; <mark class="comment">/* по умолчанию */</mark></code>
+			<code>    flex-direction:<mark>row-reverse</mark>;</code>
+			<code>    }</code>
+		</pre>
+	</div></section>
+	<section class="slide cover" id="22"><div>
+		<div class="novel flex row-reverse axis-left">
+			<div>Нельзя</div>
+			<div>поверить</div>
+			<div>в</div>
+			<div>невозможное</div>
+		</div>
+	</div></section>
+	<section class="slide" id="23"><div>
+		<h2>Поворачиваем саму ось</h2>
+		<pre>			<code>.novel {</code>
+			<code>    display:flex;</code>
+			<code>    flex-direction:<mark>column</mark>;</code>
+			<code>    }</code>
+		</pre>
+	</div></section>
+	<section class="slide cover" id="24"><div>
+		<div class="novel flex column axis-down">
+			<div>Нельзя</div>
+			<div>поверить</div>
+			<div>в</div>
+			<div>невозможное</div>
+		</div>
+	</div></section>
+	<section class="slide" id="25"><div>
+		<h2>Меняем направление по оси</h2>
+		<pre>			<code>.novel {</code>
+			<code>    display:flex;</code>
+			<code>    flex-direction:<mark>column-reverse</mark>;</code>
+			<code>    }</code>
+		</pre>
+	</div></section>
+	<section class="slide cover" id="26"><div>
+		<div class="novel flex column-reverse axis-up">
+			<div>Нельзя</div>
+			<div>поверить</div>
+			<div>в</div>
+			<div>невозможное</div>
+		</div>
+	</div></section>
+	<section class="slide cover" id="27"><div>
+		<div class="novel flex">
+			<div>Нельзя</div>
+			<div>поверить</div>
+			<div>в</div>
+			<div>невозможное</div>
+		</div>
+	</div></section>
+	<section class="slide shout" id="28"><div>
+		<h2>Вдоль</h2>
+	</div></section>
+	<section class="slide cover" id="29"><div>
+		<img src="pictures/axis-row-bones.svg" alt="">
+	</div></section>
+	<section class="slide cover" id="30"><div>
+		<img src="pictures/axis-row-bones-reverse.svg" alt="">
+	</div></section>
+	<section class="slide cover" id="31"><div>
+		<div class="novel flex">
+			<div>Нельзя</div>
+			<div>поверить</div>
+			<div>в</div>
+			<div>невозможное</div>
+		</div>
+	</div></section>
+	<section class="slide" id="32"><div>
+		<h2>Вдоль направо</h2>
+		<pre>			<code>.novel {</code>
+			<code>    display:flex;</code>
+			<code>    justify-content:<mark>flex-start</mark>; <mark class="comment">/* по умолчанию */</mark></code>
+			<code>    justify-content:<mark>flex-end</mark>;</code>
+			<code>    }</code>
+		</pre>
+	</div></section>
+	<section class="slide cover" id="33"><div>
+		<div class="novel flex justify-end">
+			<div>Нельзя</div>
+			<div>поверить</div>
+			<div>в</div>
+			<div>невозможное</div>
+		</div>
+	</div></section>
+	<section class="slide" id="34"><div>
+		<h2>Вдоль посередине</h2>
+		<pre>			<code>.novel {</code>
+			<code>    display:flex;</code>
+			<code>    <mark>justify-content:center;</mark></code>
+			<code>    }</code>
+		</pre>
+	</div></section>
+	<section class="slide cover" id="35"><div>
+		<div class="novel flex justify-center">
+			<div>Нельзя</div>
+			<div>поверить</div>
+			<div>в</div>
+			<div>невозможное</div>
+		</div>
+	</div></section>
+	<section class="slide" id="36"><div>
+		<h2>Вдоль равномерно</h2>
+		<pre>			<code>.novel {</code>
+			<code>    display:flex;</code>
+			<code>    <mark>justify-content:space-between;</mark></code>
+			<code>    }</code>
+		</pre>
+	</div></section>
+	<section class="slide cover" id="37"><div>
+		<div class="novel flex justify-between">
+			<div>Нельзя</div>
+			<div>поверить</div>
+			<div>в</div>
+			<div>невозможное</div>
+		</div>
+	</div></section>
+	<section class="slide" id="38"><div>
+		<h2>Вдоль красиво</h2>
+		<pre>			<code>.novel {</code>
+			<code>    display:flex;</code>
+			<code>    <mark>justify-content:space-around;</mark></code>
+			<code>    }</code>
+		</pre>
+	</div></section>
+	<section class="slide cover" id="39"><div>
+		<div class="novel flex justify-around">
+			<div>Нельзя</div>
+			<div>поверить</div>
+			<div>в</div>
+			<div>невозможное</div>
+		</div>
+	</div></section>
+	<section class="slide shout" id="40"><div>
+		<h2>Перестановка</h2>
+	</div></section>
+	<section class="slide cover" id="41"><div>
+		<div class="novel flex justify-between">
+			<div>Нельзя</div>
+			<div>поверить</div>
+			<div>в</div>
+			<div>невозможное</div>
+		</div>
+	</div></section>
+	<section class="slide cover" id="42"><div>
+		<div class="novel flex justify-between order">
+			<div>Нельзя</div>
+			<div>поверить</div>
+			<div>в</div>
+			<div>невозможное</div>
+		</div>
+	</div></section>
+	<section class="slide" id="43"><div>
+		<h2>Меняем порядок</h2>
+		<pre>			<code>.novel div:nth-child(<mark class="important">2</mark>) {</code>
+			<code>    <mark>order:1;</mark></code>
+			<code>    }</code>
+		</pre>
+	</div></section>
+	<section class="slide cover" id="44"><div>
+		<div class="novel flex justify-between order order-2nd-1">
+			<div>Нельзя</div>
+			<div>поверить</div>
+			<div>в</div>
+			<div>невозможное</div>
+		</div>
+	</div></section>
+	<section class="slide" id="45"><div>
+		<h2>Меняем порядок</h2>
+		<pre>			<code>.novel div {</code>
+			<code>    <mark>order:4;</mark></code>
+			<code>    }</code>
+		</pre>
+	</div></section>
+	<section class="slide cover" id="46"><div>
+		<div class="novel flex justify-between order order-all-4">
+			<div>Нельзя</div>
+			<div>поверить</div>
+			<div>в</div>
+			<div>невозможное</div>
+		</div>
+	</div></section>
+	<section class="slide" id="47"><div>
+		<h2>Меняем порядок</h2>
+		<pre>			<code>.novel div:nth-child(<mark class="important">1</mark>) { <mark>order:2</mark> }</code>
+			<code>.novel div:nth-child(<mark class="important">2</mark>) { <mark>order:1</mark> }</code>
+			<code>.novel div:nth-child(<mark class="important">3</mark>) { <mark>order:4</mark> }</code>
+			<code>.novel div:nth-child(<mark class="important">4</mark>) { <mark>order:3</mark> }</code>
+		</pre>
+	</div></section>
+	<section class="slide cover" id="48"><div>
+		<div class="novel flex justify-between order order-arranged">
+			<div>Нельзя</div>
+			<div>поверить</div>
+			<div>в</div>
+			<div>невозможное</div>
+		</div>
+	</div></section>
+	<section class="slide cover w" id="49"><div>
+		<img src="pictures/welcome.jpg" alt="">
+	</div></section>
+	<section class="slide shout" id="50"><div>
+		<h2>Поперек</h2>
+	</div></section>
+	<section class="slide cover" id="51"><div>
+		<img src="pictures/axis-row-bones.svg" alt="">
+	</div></section>
+	<section class="slide" id="52"><div>
+		<h2>Даём высоту</h2>
+		<pre>			<code>.novel div {</code>
+			<code>    <mark>height:250px;</mark></code>
+			<code>    }</code>
+		</pre>
+	</div></section>
+	<section class="slide cover" id="53"><div>
+		<div class="novel flex justify-between align-items-height">
+			<div>Нельзя</div>
+			<div>поверить</div>
+			<div>в</div>
+			<div>невозможное</div>
+		</div>
+	</div></section>
+	<section class="slide" id="54"><div>
+		<h2>Поперёк внизу</h2>
+		<pre>			<code>.novel {</code>
+			<code>    display:flex;</code>
+			<code>    align-items:<mark>flex-start</mark>; <mark class="comment">/* по умолчанию */</mark></code>
+			<code>    align-items:<mark>flex-end</mark>;</code>
+			<code>    }</code>
+		</pre>
+	</div></section>
+	<section class="slide cover" id="55"><div>
+		<div class="novel flex justify-between align-items-height align-items-end">
+			<div>Нельзя</div>
+			<div>поверить</div>
+			<div>в</div>
+			<div>невозможное</div>
+		</div>
+	</div></section>
+	<section class="slide" id="56"><div>
+		<h2>Поперёк посередине</h2>
+		<pre>			<code>.novel {</code>
+			<code>    display:flex;</code>
+			<code>    align-items:<mark>center</mark>;</code>
+			<code>    }</code>
+		</pre>
+	</div></section>
+	<section class="slide cover" id="57"><div>
+		<div class="novel flex justify-between align-items-height align-items-center">
+			<div>Нельзя</div>
+			<div>поверить</div>
+			<div>в</div>
+			<div>невозможное</div>
+		</div>
+	</div></section>
+	<section class="slide" id="58"><div>
+		<h2>Поперёк индивидуально</h2>
+		<pre>			<code>.novel <mark>div</mark>:nth-child(<mark class="important">1</mark>) {</code>
+			<code>    align-self:<mark>flex-start</mark>;</code>
+			<code>    }</code>
+			<code>.novel <mark>div</mark>:nth-child(<mark class="important">4</mark>) {</code>
+			<code>    align-self:<mark>flex-end</mark>;</code>
+			<code>    }</code>
+		</pre>
+	</div></section>
+	<section class="slide cover" id="59"><div>
+		<div class="novel flex justify-between align-items-height align-items-center align-items-start-end">
+			<div>Нельзя</div>
+			<div>поверить</div>
+			<div>в</div>
+			<div>невозможное</div>
+		</div>
+	</div></section>
+	<section class="slide cover" id="60"><div>
+		<div class="novel flex margin">
+			<div>Нельзя</div>
+		</div>
+	</div></section>
+	<section class="slide" id="61"><div>
+		<h2>Центрирование</h2>
+		<pre>			<code>.novel {</code>
+			<code>    <mark>display:flex;</mark></code>
+			<code>    }</code>
+			<code>.novel div {</code>
+			<code>    <mark>margin:auto;</mark></code>
+			<code>    }</code>
+		</pre>
+	</div></section>
+	<section class="slide shout" id="62"><div>
+		<h2>Растягивание</h2>
+	</div></section>
+	<section class="slide cover" id="63"><div>
+		<div class="novel flex">
+			<div>Нельзя</div>
+			<div>поверить</div>
+			<div>в</div>
+			<div>невозможное</div>
+		</div>
+	</div></section>
+	<section class="slide cover" id="64"><div>
+		<div class="novel flex">
+			<div>×</div>
+			<div>×</div>
+			<div>×</div>
+			<div>×</div>
+		</div>
+	</div></section>
+	<section class="slide" id="65"><div>
+		<h2>Растягивание</h2>
+		<pre>			<code>.novel div {</code>
+			<code>    <mark>flex-grow:1;</mark></code>
+			<code>    }</code>
+		</pre>
+	</div></section>
+	<section class="slide cover" id="66"><div>
+		<div class="novel flex grow width-play">
+			<div>×</div>
+			<div>×</div>
+			<div>×</div>
+			<div>×</div>
+		</div>
+	</div></section>
+	<section class="slide" id="67"><div>
+		<h2>Растягивание</h2>
+		<pre>			<code>.novel div {</code>
+			<code>    <mark>flex-grow:1;</mark></code>
+			<code>    }</code>
+			<code>.novel div:nth-child(<mark class="important">1</mark>) {</code>
+			<code>    <mark>flex-grow:4;</mark></code>
+			<code>    }</code>
+		</pre>
+	</div></section>
+	<section class="slide cover" id="68"><div>
+		<div class="novel flex grow grow-1st-4 width-play">
+			<div>×</div>
+			<div>×</div>
+			<div>×</div>
+			<div>×</div>
+		</div>
+	</div></section>
+	<section class="slide" id="69"><div>
+		<h2>Сжатие</h2>
+		<pre>			<code>.novel div {</code>
+			<code>    <mark>width:25%;</mark></code>
+			<code>    }</code>
+			<code>.novel div:nth-child(1) {</code>
+			<code>    <mark>flex-shrink:4;</mark></code>
+			<code>    }</code>
+		</pre>
+	</div></section>
+	<section class="slide cover" id="70"><div>
+		<div class="novel flex shrink width-play">
+			<div>×</div>
+			<div>×</div>
+			<div>×</div>
+			<div>×</div>
+		</div>
+	</div></section>
+	<section class="slide" id="71"><div>
+		<h2>Запас</h2>
+		<pre>			<code>.novel div {</code>
+			<code>    <mark>flex-grow:1;</mark></code>
+			<code>    }</code>
+			<code>.novel div:nth-child(<mark class="important">1</mark>) {</code>
+			<code>    <mark>flex-basis:250px;</mark></code>
+			<code>    }</code>
+		</pre>
+	</div></section>
+	<section class="slide cover" id="72"><div>
+		<div class="novel flex grow basis width-play">
+			<div>×</div>
+			<div>×</div>
+			<div>×</div>
+			<div>×</div>
+		</div>
+	</div></section>
+	<section class="slide shout" id="73"><div>
+		<h2>Многострочный Flexbox</h2>
+	</div></section>
+	<section class="slide cover" id="74"><div>
+		<div class="novel">
+			<div>Нельзя</div>
+			<div>поверить</div>
+			<div>в</div>
+			<div>невозможное!</div>
+			<div>В&nbsp;иные&nbsp;дни</div>
+			<div>я&nbsp;успевала</div>
+			<div>поверить</div>
+			<div>в&nbsp;десяток</div>
+			<div>невозможностей</div>
+			<div>до&nbsp;завтрака.</div>
+			<div>Если&nbsp;в&nbsp;мире</div>
+			<div>все&nbsp;бессмысленно,</div>
+			<div>что&nbsp;мешает</div>
+			<div>выдумать</div>
+			<div>какой-нибудь</div>
+			<div>смысл?</div>
+		</div>
+	</div></section>
+	<section class="slide cover" id="75"><div>
+		<div class="novel flex">
+			<div>Нельзя</div>
+			<div>поверить</div>
+			<div>в</div>
+			<div>невозможное!</div>
+			<div>В&nbsp;иные&nbsp;дни</div>
+			<div>я&nbsp;успевала</div>
+			<div>поверить</div>
+			<div>в&nbsp;десяток</div>
+			<div>невозможностей</div>
+			<div>до&nbsp;завтрака.</div>
+			<div>Если&nbsp;в&nbsp;мире</div>
+			<div>все&nbsp;бессмысленно,</div>
+			<div>что&nbsp;мешает</div>
+			<div>выдумать</div>
+			<div>какой-нибудь</div>
+			<div>смысл?</div>
+		</div>
+	</div></section>
+	<section class="slide" id="76"><div>
+		<h2>Перенос</h2>
+		<pre>			<code>.novel {</code>
+			<code>    display:flex;</code>
+			<code>    flex-wrap:<mark>nowrap</mark>; <mark class="comment">/* по умолчанию */</mark></code>
+			<code>    flex-wrap:<mark>wrap</mark>;</code>
+			<code>    }</code>
+		</pre>
+	</div></section>
+	<section class="slide cover" id="77"><div>
+		<div class="novel flex wrap">
+			<div>Нельзя</div>
+			<div>поверить</div>
+			<div>в</div>
+			<div>невозможное!</div>
+			<div>В&nbsp;иные&nbsp;дни</div>
+			<div>я&nbsp;успевала</div>
+			<div>поверить</div>
+			<div>в&nbsp;десяток</div>
+			<div>невозможностей</div>
+			<div>до&nbsp;завтрака.</div>
+			<div>Если&nbsp;в&nbsp;мире</div>
+			<div>все&nbsp;бессмысленно,</div>
+			<div>что&nbsp;мешает</div>
+			<div>выдумать</div>
+			<div>какой-нибудь</div>
+			<div>смысл?</div>
+		</div>
+	</div></section>
+	<section class="slide" id="78"><div>
+		<h2>Перенос наоборот</h2>
+		<pre>			<code>.novel {</code>
+			<code>    display:flex;</code>
+			<code>    flex-wrap:<mark>wrap-reverse</mark>;</code>
+			<code>    }</code>
+		</pre>
+	</div></section>
+	<section class="slide cover" id="79"><div>
+		<div class="novel flex wrap-reverse">
+			<div>Нельзя</div>
+			<div>поверить</div>
+			<div>в</div>
+			<div>невозможное!</div>
+			<div>В&nbsp;иные&nbsp;дни</div>
+			<div>я&nbsp;успевала</div>
+			<div>поверить</div>
+			<div>в&nbsp;десяток</div>
+			<div>невозможностей</div>
+			<div>до&nbsp;завтрака.</div>
+			<div>Если&nbsp;в&nbsp;мире</div>
+			<div>все&nbsp;бессмысленно,</div>
+			<div>что&nbsp;мешает</div>
+			<div>выдумать</div>
+			<div>какой-нибудь</div>
+			<div>смысл?</div>
+		</div>
+	</div></section>
+	<section class="slide cover" id="80"><div>
+		<div class="novel flex wrap grow width-play">
+			<div>Нельзя</div>
+			<div>поверить</div>
+			<div>в</div>
+			<div>невозможное!</div>
+			<div>В&nbsp;иные&nbsp;дни</div>
+			<div>я&nbsp;успевала</div>
+			<div>поверить</div>
+			<div>в&nbsp;десяток</div>
+			<div>невозможностей</div>
+			<div>до&nbsp;завтрака.</div>
+			<div>Если&nbsp;в&nbsp;мире</div>
+			<div>все&nbsp;бессмысленно,</div>
+			<div>что&nbsp;мешает</div>
+			<div>выдумать</div>
+			<div>какой-нибудь</div>
+			<div>смысл?</div>
+		</div>
+	</div></section>
+	<section class="slide cover" id="81"><div>
+		<img src="pictures/axis-row-bones.svg" alt="">
+	</div></section>
+	<section class="slide" id="82"><div>
+		<h2>Порядок поперёк</h2>
+		<pre>			<code>.novel {</code>
+			<code>    display:flex;</code>
+			<code>    align-content:<mark>stretch</mark>; <mark class="comment">/* по умолчанию */</mark></code>
+			<code>    align-content:<mark>center</mark>;</code>
+			<code>    }</code>
+		</pre>
+		<p class="note">Только для многострочных блоков!</p>
+	</div></section>
+	<section class="slide cover" id="83"><div>
+		<div class="novel flex wrap grow align-content-center">
+			<div>Нельзя</div>
+			<div>поверить</div>
+			<div>в</div>
+			<div>невозможное!</div>
+			<div>В&nbsp;иные&nbsp;дни</div>
+			<div>я&nbsp;успевала</div>
+			<div>поверить</div>
+			<div>в&nbsp;десяток</div>
+			<div>невозможностей</div>
+			<div>до&nbsp;завтрака.</div>
+			<div>Если&nbsp;в&nbsp;мире</div>
+			<div>все&nbsp;бессмысленно,</div>
+			<div>что&nbsp;мешает</div>
+			<div>выдумать</div>
+			<div>какой-нибудь</div>
+			<div>смысл?</div>
+		</div>
+	</div></section>
+	<section class="slide cover" id="84"><div>
+		<div class="novel flex wrap grow align-content-between">
+			<div>Нельзя</div>
+			<div>поверить</div>
+			<div>в</div>
+			<div>невозможное!</div>
+			<div>В&nbsp;иные&nbsp;дни</div>
+			<div>я&nbsp;успевала</div>
+			<div>поверить</div>
+			<div>в&nbsp;десяток</div>
+			<div>невозможностей</div>
+			<div>до&nbsp;завтрака.</div>
+			<div>Если&nbsp;в&nbsp;мире</div>
+			<div>все&nbsp;бессмысленно,</div>
+			<div>что&nbsp;мешает</div>
+			<div>выдумать</div>
+			<div>какой-нибудь</div>
+			<div>смысл?</div>
+		</div>
+	</div></section>
+	<section class="slide cover" id="85"><div>
+		<div class="novel flex wrap grow align-content-start">
+			<div>Нельзя</div>
+			<div>поверить</div>
+			<div>в</div>
+			<div>невозможное!</div>
+			<div>В&nbsp;иные&nbsp;дни</div>
+			<div>я&nbsp;успевала</div>
+			<div>поверить</div>
+			<div>в&nbsp;десяток</div>
+			<div>невозможностей</div>
+			<div>до&nbsp;завтрака.</div>
+			<div>Если&nbsp;в&nbsp;мире</div>
+			<div>все&nbsp;бессмысленно,</div>
+			<div>что&nbsp;мешает</div>
+			<div>выдумать</div>
+			<div>какой-нибудь</div>
+			<div>смысл?</div>
+		</div>
+	</div></section>
+	<section class="slide cover" id="86"><div>
+		<div class="novel flex wrap grow align-content-end">
+			<div>Нельзя</div>
+			<div>поверить</div>
+			<div>в</div>
+			<div>невозможное!</div>
+			<div>В&nbsp;иные&nbsp;дни</div>
+			<div>я&nbsp;успевала</div>
+			<div>поверить</div>
+			<div>в&nbsp;десяток</div>
+			<div>невозможностей</div>
+			<div>до&nbsp;завтрака.</div>
+			<div>Если&nbsp;в&nbsp;мире</div>
+			<div>все&nbsp;бессмысленно,</div>
+			<div>что&nbsp;мешает</div>
+			<div>выдумать</div>
+			<div>какой-нибудь</div>
+			<div>смысл?</div>
+		</div>
+	</div></section>
+	<section class="slide" id="87"><div>
+		<h2>Читать</h2>
+		<ul>
+			<li><a href="http://pepelsbey.net/2013/05/flexbox-gotcha/">Вадим&nbsp;Макеев: Flexbox, теперь понятно.</a></li>
+			<li><a href="http://www.w3.org/TR/css3-flexbox/">CSS Flexible Box Layout Module Level 1</a></li>
+			<li><a href="http://frontender.info/a-guide-to-flexbox/">Chris Coyier: Полное руководство по Flexbox</a></li>
+			<li><a href="http://html5.by/blog/flexbox/">Что такое Flexbox? Описание всех css свойств, основные принципы, преимущества и недостатки.</a></li>
+			<li><a href="http://caniuse.com/flexbox">Поддержка Flexbox в браузерах</a></li>
+			<li><a href="http://bennettfeely.com/flexplorer/">CSS3 Flexplorer</a></li>
+
+		</ul>
+	</div></section>
+	<section class="slide shout" id="88"><div>
+		<h2>Multi-column</h2>
+	</div></section>
+
+	<section class="slide cover" id="89"><div>
+		<div class="newspaper column-3">
+			Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum.
+		</div>
+	</div></section>
+
+	<section class="slide shout" id="90"><div>
+		<h2><img class="check" src="pictures/check.svg" alt=""> 93.01%</h2>
+	</div></section>
+
+	<section class="slide" id="91"><div>
+		<h2>Меняем количество колонок</h2>
+		<pre>			<code>.newspaper { </code>
+			<code>    <mark>column-count: 4;</mark></code>
+			<code>    }</code>
+		</pre>
+	</div></section>
+
+	<section class="slide cover" id="92"><div>
+		<div class="newspaper column-4">
+			Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum.
+		</div>
+	</div></section>
+
+	<section class="slide" id="93"><div>
+		<h2>Задаем ширину колонки</h2>
+		<pre>			<code>.newspaper { </code>
+			<code>    <mark>column-width: 300px;</mark></code>
+			<code>    }</code>
+		</pre>
+	</div></section>
+
+	<section class="slide cover" id="94"><div>
+		<div class="newspaper column-width-300">
+			Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum.
+		</div>
+	</div></section>
+
+	<section class="slide" id="95"><div>
+		<h2>Меняем расстояние между колонками</h2>
+		<pre>			<code>.newspaper { </code>
+			<code>    <mark>column-gap: 30px;</mark></code>
+			<code>    }</code>
+		</pre>
+	</div></section>
+
+	<section class="slide cover" id="96"><div>
+		<div class="newspaper column-2 column-gap-200">
+			Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum.
+		</div>
+	</div></section>
+
+	<section class="slide" id="97"><div>
+		<h2>Добавляем разделитель</h2>
+		<pre>			<code>.newspaper { </code>
+			<code>    <mark>column-rule: 5px solid #999;</mark></code>
+			<code>    }</code>
+		</pre>
+	</div></section>
+
+	<section class="slide cover" id="98"><div>
+		<div class="newspaper column-2 column-gap-200 column-rule ">
+			Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum.
+		</div>
+	</div></section>
+
+	<section class="slide" id="99"><div>
+		<h2>Добавляем блок шириной во все колонки</h2>
+		<pre>			<code>.newspaper { </code>
+			<code>    <mark>column-span: all;</mark></code>
+			<code>    }</code>
+		</pre>
+	</div></section>
+
+	<section class="slide cover" id="100"><div>
+		<div class="newspaper column-2 column-gap-200 column-rule">
+
+			<iframe src="http://codepen.io/mirantel/full/qdBqJp" frameborder="0" width="1025" height="640" style="z-index: 5;"></iframe>
+		</div>
+	</div></section>
+
+	<section class="slide" id="101"><div>
+		<h2>Читать</h2>
+		<ul>
+			<li><a href="http://www.w3.org/TR/css3-multicol/">CSS Multi-column Layout Module</a></li>
+			<li><a href="http://webdesign.tutsplus.com/tutorials/an-introduction-to-the-css3-multiple-column-layout-module--webdesign-4934">An Introduction To The CSS3 Multiple Column Layout Module</a></li>
+			<li><a href="http://caniuse.com/#feat=multicolumn">Поддержка Multiple Column в браузерах</a></li>
+		</ul>
+	</div></section>
+
+	<section class="slide shout" id="102"><div>
+		<h2 style="font-size: 80px">Спасибо за внимание.</h2>
+	</div></section>
+
+	<div class="progress"><div></div></div>
+	<script async="" src="js/watch.js"></script><script src="js/shower.min.js"></script>
+	<!-- Copyright © 2010–2014 Vadim Makeev — pepelsbey.net -->
+	<script>(function(b,c,a){(c[a]=c[a]||[]).push(function(){try{c.yaCounter155532=new Ya.Metrika({id:155532})}catch(a){}});var e=b.getElementsByTagName('script')[0],d=b.createElement('script'),a=function(){e.parentNode.insertBefore(d,e)};d.async=!0;d.src='//mc.yandex.ru/metrika/watch.js';'[object Opera]'==c.opera?b.addEventListener('DOMContentLoaded',a):a()})(document,window,'yandex_metrika_callbacks');</script><noscript>&lt;img src="//mc.yandex.ru/watch/155532" alt=""&gt;</noscript>
+
+<section class="live-region" role="region" aria-live="assertive" aria-relevant="additions" aria-label="Slide Content: Auto-updating"></section></body></html>
