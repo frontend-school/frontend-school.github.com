@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Frontend Optimization - Yevhen Isakov</title>
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/beige.css" id="theme">
+
+        <link rel="stylesheet" href="css/theme/user.css" />
+
+        <!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/user.css">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Frontend Optimization</h1>
+				</section>
+
+				<section>
+					<img src="assets/i/loading.gif" alt="" />
+				</section>
+
+                <section>
+                    <h2>Files order</h2>
+                    <ul>
+                        <li class="fragment">CSS in the <b>beginning</b> of page</li>
+                        <li class="fragment">JS in the <b>end</b> of the page</li>
+                    </ul>
+                    <div class="fragment">
+                        <pre><code class="html">
+&lt;!doctype html&gt;
+&lt;head&gt;
+...
+&lt;link rel="stylesheet" href="style.css" /&gt;
+...
+&lt;/head&gt;
+&lt;body&gt;
+...
+&lt;script src="script.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+                        </code></pre>
+                    </div>
+                </section>
+
+				<section>
+					<h2>Resourses concatenation</h2>
+
+                    <ul>
+                        <li class="fragment">
+                            <pre><code class="html bad">
+&lt;link rel="stylesheet" href="base.css" /&gt;
+&lt;link rel="stylesheet" href="main.css" /&gt;
+...
+&lt;link rel="stylesheet" href="theme.css" /&gt;
+                            </code></pre>
+                        </li>
+                        <li class="fragment">
+                            <pre><code class="html good">
+&lt;link rel="stylesheet" href="result.css" /&gt;
+                            </code></pre>
+                        </li>
+                    </ul>
+				</section>
+
+                <section>
+                    <h2>Minifying</h2>
+                    <ul style="margin-top: 40px;">
+                        <li class="fragment">
+style.css &mdash; 52 Kb
+                        </li>
+                        <li class="fragment">
+style.min.css &mdash; 36 Kb
+                        </li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Images optimization</h2>
+                </section>
+                
+                <section>
+                    <h2>Image format</h2>
+                    <ul style="margin:0 -60px;">
+                        <li class="fragment" style="display: inline-block;vertical-align: top;width: 49%;">
+                            <img src="assets/i/format-png.png" alt="" style="border:0"/>
+                        </li>
+                        <li class="fragment" style="display: inline-block;vertical-align: top;width: 49%;">
+                            <img src="assets/i/format-jpg.png" alt="" style="border:0"/>
+                        </li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Image quality</h2>
+                    <ul style="margin:0 -60px;">
+                        <li class="fragment" style="display: inline-block;vertical-align: top;width: 49%;">
+                            <img src="assets/i/quality-90.png" alt="" style="border:0"/>
+                        </li>
+                        <li class="fragment" style="display: inline-block;vertical-align: top;width: 49%;">
+                            <img src="assets/i/quality-80.png" alt="" style="border:0"/>
+                        </li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Sprites</h2>
+                    <ul>
+                        <li class="fragment">
+                            <pre><code class="css bad">
+.icon-close {
+    background: url('i/close.png');
+    }
+.icon-notify {
+    background: url('i/nofity.png');
+    }
+                            </code></pre>
+                        </li>
+                        <li class="fragment">
+                            <pre><code class="css good">
+.icon-close {
+    background-image: url('i/sprite.png');
+    background-position: -32px 0;
+    }
+.icon-notify {
+    background-image: url('i/sprite.png');
+    background-position: -64px 0;
+    }
+                            </code></pre>
+                        </li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Inline images</h2>
+
+                    <h3 class="fragment">base64</h3>
+                </section>
+
+                <section>
+                    <div><img src="assets/i/close.png" alt="" style="border:0"/></div>
+                    <ul>
+                        <li class="fragment">
+                            <pre><code class="html" style="font-size:85%">&lt;img src="close.png" alt="" /&gt;</code></pre>
+                        </li>
+                        <li class="fragment">
+                            <pre><code class="html" style="font-size:85%">&lt;img src="data:image/png;base64,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" alt="" /&gt;</code></pre>
+                        </li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>CDN</h2>
+                    <div style="margin-top:40px;">Content Delivery Network</div>
+                </section>
+
+                <section>
+                    <h2>CSS Selectors</h2>
+                    <ul>
+                        <li class="fragment">
+                            <div><em>.class</em> and <em>#id</em> are fastest</div>
+<pre><code class="css bad">div {
+    color: red;
+    }</code></pre>
+<pre><code class="css good">.important-note {
+    color: red;
+    }</code></pre>
+                        </li>
+                        <li class="fragment">
+                            <div>CSS Cascade might slow page loading</div>
+<pre><code class="css bad">.menu ul li a {
+font-size: .75em;
+}</code></pre>
+<pre><code class="css good">.menu-item__link {
+font-size: .75em;
+}</code></pre>
+                        </li>
+                        <li class="fragment">
+                            <div>Avoid to use "clever" and huge selectors</div>
+                            <pre><code class="css bad">li:nth-child(2n) > a:not(:visited) + *:not([disabled]) { ... }</code></pre>
+                        </li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Reflow / repaint</h2>
+                </section>
+
+                <section>
+                    <h2>That's not all...</h2>
+                </section>
+
+                <section>
+                    <h2>Thank you!</h2>
+
+                    <div class="author">
+                        <img class="author-avatar" src="assets/i/avatar.jpg" alt="" />
+                        <div class="author-main">
+                            <div class="author-name">Yevhen Isakov</div>
+                            <div class="author-job">Frontend dev @ EPAM Systems</div>
+                            <div class="author-contacts">
+                                <div class="author-contacts_email"><a href="mailto:is4kov@gmail.com">is4kov@gmail.com</a></div>
+                                <div class="author-contacts_twitter"><a href="https://twitter.com/is4kov">@is4kov</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+	</body>
+</html>
