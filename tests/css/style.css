@@ -1,0 +1,159 @@
+body {
+	padding: 40px 60px;
+	background: #f6f6f6;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 16px;
+	line-height: 1.25;
+	color: #333;
+	tab-size: 4;
+	}
+
+code {
+	display: inline-block;
+	margin: 0 2px;
+	padding: 2px 6px;
+	border: 1px solid #ccc;
+	box-shadow: 0 0 2px #ccc;
+	font-size: 16px;
+	}
+
+.l-wrapper {
+	padding: 20px 40px;
+	border: 1px solid #ccc;
+	box-shadow: 0 0 10px #ccc;
+	background:	#fff;
+	}
+
+.l-wrapper > ul {
+	list-style: none;
+	padding: 0;
+	counter-reset: number;
+	}
+
+.l-wrapper > ul > li {
+	position: relative;
+	counter-increment: number;
+	}
+
+.l-wrapper > ul > li + li {
+	margin-top: 50px;
+	padding-top: 30px;
+	}
+
+.l-wrapper > ul > li:not(:first-child)::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: 60%;
+	height: 1px;
+	margin-left: -30%;
+	background: #ccc;
+	}
+
+.l-wrapper > ul > li > .question {
+	font-size: 125%;
+	}
+
+.l-wrapper > ul > li > .question::before {
+	content: counter(number)". ";
+	display: inline-block;
+	margin-right: 8px;
+	font-size: 200%;
+	color: black;
+	}
+
+.l-wrapper > ul ul {
+	padding: 0;
+	list-style: none;
+	}
+
+.l-wrapper > ul ul.is-answered {
+	}
+
+.l-wrapper > ul ul > li {
+	position: relative;
+	transition: all linear .2s;
+	margin-top: 5px;
+	padding: 6px 12px 6px 50px;
+	border: 2px solid transparent;
+	cursor: pointer;
+	}
+
+.l-wrapper > ul ul > li::before {
+	position: absolute;
+	transform: translateY(-50%);
+	left: 20px;
+	top: 50%;
+	font-weight: bold;
+	}
+
+.l-wrapper > ul ul > li:hover {
+	border-color: #eee;
+	background: #f6f6f6;
+	}
+
+.l-wrapper > ul ul.is-answered > li {}
+
+.l-wrapper > ul ul.is-answered > li:hover {
+	border-color: #fff;
+	background: #fff;
+	}
+
+.l-wrapper > ul ul.is-answered > li.is-correct {
+	border-color: green;
+	color: green;
+	}
+
+.l-wrapper > ul ul.is-answered > li.is-correct::before {
+	content: "✓";
+	}
+
+.l-wrapper > ul ul.is-answered > li.is-selected {
+	border-color: red;
+	color: red;
+	}
+
+.l-wrapper > ul ul.is-answered > li.is-selected::before {
+	content: "✘";
+	}
+
+
+
+@media print {
+
+	@page {
+		margin: 0;
+		}
+
+	body {
+		background: #fff;
+		font-size: 12px;
+		}
+
+	.l-wrapper {
+		padding: 0;
+		border: 0;
+		box-shadow: none;
+		}
+
+	pre {
+		margin: 0;
+		}
+
+	code {
+		padding: 2px;
+		border: 0;
+		box-shadow: none;
+		font-size: 12px;
+		}
+
+	.l-wrapper > ul > li + li {
+		margin-top: 10px;
+		padding-top: 0;
+		}
+	.l-wrapper > ul ul > li {
+		padding: 0;
+		border: 0;
+		}
+	}

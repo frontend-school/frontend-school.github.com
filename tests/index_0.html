@@ -1,0 +1,271 @@
+<!doctype html>
+<html>
+<head>
+	<meta chrsert="utf-8" />
+	<title>Index of - Test #0</title>
+	<link rel="stylesheet" href="css/style.css" />
+	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<script>
+		$().ready(function() {
+			$('.answer > li').click(function() {
+				var $this = $(this);
+				if ($this.parent().hasClass('is-answered')) {
+					return false;
+				}
+				if (!$this.hasClass('is-correct')) {
+					$this.addClass('is-selected');
+				}
+				$this.parent().addClass('is-answered');
+
+			});
+		});
+	</script>
+</head>
+<body>
+<div class="l-wrapper">
+	<ul>
+		<li>
+			<div class="question">
+				Что делает следующий код?
+<pre><code>
+ul li:first-letter {
+    font-size: 200%
+    }
+
+</code></pre>
+			</div>
+			<ul class="answer">
+				<li>Делает первую букву у первого элемента в нумерованном списке размером 200%.</li>
+				<li>Ничего не делает, так как псевдоэлемента <code>first-letter</code> вообще не существует.</li>
+				<li class="is-correct">Делает первую букву у каждого элемента ненумерованного списка размером 200%.</li>
+				<li>Делает первую букву у первого элемента в ненумерованном списке размером 200%.</li>
+			</ul>
+		</li>
+		<li>
+			<div class="question">Какое принципиальное отличие селектора <code>#id</code> от селектора <code>.class</code>?</div>
+			<ul class="answer">
+				<li>Никакого отличия между ними нет.</li>
+				<li>Разница только в наборе свойств, который может быть использован для этих селекторов. Например, для #id нельзя задавать свойство border, а для .class можно.</li>
+				<li>.class может быть указан у всех элементов, а #id - нет.</li>
+				<li class="is-correct">#id должен быть уникальным на странице, а одинаковый .class может быть у нескольких элементов.</li>
+			</ul>
+		</li>
+		<li>
+			<div class="question">Какая ошибка содержится в следующей записи стиля?
+				<pre><code>
+img {
+	float: left;
+	border-width: 3;
+	display: block
+	}
+				</code></pre>
+			</div>
+			<ul class="answer">
+				<li>Не хватает точки с запятой в конце записи</li>
+				<li class="is-correct">Не указаны единицы измерения свойства <code>border-width</code></li>
+				<li>Значения <code>left</code> и <code>block</code> написаны без кавычек</li>
+				<li>Свойства <code>border-width</code> не существует</li>
+				<li>Значение <code>block</code> свойства <code>display</code> не допускается применять к изображениям</li>
+			</ul>
+		</li>
+		<li>
+			<div class="question">Какое свойство используется для задания отступов у блока от него до других элементов?</div>
+			<ul class="answer">
+				<li><code>position</code></li>
+				<li class="is-correct"><code>margin</code></li>
+				<li><code>padding</code></li>
+				<li><code>direction</code></li>
+			</ul>
+		</li>
+		<li>
+			<div class="question">Какой селектор написан с ошибкой?</div>
+			<ul class="answer">
+				<li class="is-correct"><code>input["text"]</code></li>
+				<li><code>input.text</code></li>
+				<li><code>input[type="text"]</code></li>
+				<li><code>div &gt; p</code></li>
+			</ul>
+		</li>
+		<li><br/><br/>
+			<div class="question">Какой код является правильным для отображения текста в виде верхнего индекса (м<sup>2</sup>)?</div>
+			<ul class="answer">
+				<li><code>&lt;span&gt;м&lt;sum&gt;2&lt;/sum&gt;&lt;/span&gt;</code></li>
+				<li><code>&lt;span&gt;м&lt;rank&gt;2&lt;/rank&gt;&lt;/span&gt;</code></li>
+				<li class="is-correct"><code>&lt;span&gt;м&lt;sup&gt;2&lt;/sup&gt;&lt;/span&gt;</code></li>
+				<li><code>&lt;span&gt;м&lt;sub&gt;2&lt;/sub&gt;&lt;/span&gt;</code></li>
+			</ul>
+		</li>
+		<li>
+			<div class="question">Как можно избавиться от сплошной или пунктриной рамки вокруг элемента, на котором находится мышиный или клавиатурный фокус?</div>
+			<ul class="answer">
+				<li><code>display: none;</code></li>
+				<li class="is-correct"><code>outline: none;</code></li>
+				<li><code>border: none;</code></li>
+				<li><code>border: 0;</code></li>
+			</ul>
+		</li>
+		<li>
+			<div class="question">Обязательна ли точка с запятой в конце каждого CSS-правила?</div>
+			<ul class="answer">
+				<li>да</li>
+				<li>нет</li>
+				<li class="is-correct">не всегда</li>
+			</ul>
+		</li>
+		<li>
+			<div class="question">Какая ошибка содержится в приведенной строке кода?
+				<pre><code>
+&lt;p&gt;&lt;b&gt;Lorem ipsum&lt;/b&gt; dolor &lt;i&gt;&lt;span&gt;
+sit amet consectetuer cursus&lt;br&gt; pede&lt;/i&gt; pellentesque&lt;/span&gt; vitae pretium.&lt;/p&gt;
+				</code></pre>
+			</div>
+			<ul class="answer">
+				<li>Нет закрывающего тега <code>&lt;/br&gt;.</code></li>
+				<li class="is-correct">Неправильное вложение тегов.</li>
+				<li>Тега <code>&lt;span&gt;</code> не существует.</li>
+				<li>У тегов нет ни одного атрибута.</li>
+				<li>Текст перенесен на другую строку.</li>
+			</ul>
+		</li>
+		<li>
+			<div class="question">Чтобы сохранить пробелы и переносы строк в тексте, указанном внутри HTML документа, используется следующий элемент:</div>
+			<ul class="answer">
+				<li><code>&lt;div&gt;…&lt;/div&gt;</code></li>
+				<li class="is-correct"><code>&lt;pre&gt;…&lt;/pre&gt;</code></li>
+				<li><code>&lt;td&gt;…&lt;/td&gt;</code></li>
+				<li><code>&lt;p&gt;…&lt;/p&gt;</code></li>
+				<li><code>&lt;blockquote&gt;…&lt;/blockquote&gt;</code></li>
+			</ul>
+		</li>
+		<li>
+			<div class="question">В чем разница между тегами <code>&lt;b&gt;</code> и <code>&lt;strong&gt;</code>?</div>
+			<ul class="answer">
+				<li>разница в восприятии содержимого тега браузером</li>
+				<li class="is-correct">у них разное семантическое назначение</li>
+				<li>тег <code>&lt;b&gt;</code> использовать нельзя, потому что он устаревший</li>
+				<li>никакой разницы нет</li>
+			</ul>
+		</li>
+		<li><br/><br/><br/><br/>
+			<div class="question">Как будет отображаться страница, если в начале кода будет отсутствовать <code>doctype</code>?</div>
+			<ul class="answer">
+				<li>браузер отобразит предупреждающее сообщение</li>
+				<li class="is-correct">браузер переключится в другой режим отображения страницы</li>
+				<li>ничего не изменится</li>
+				<li>страница не отобразится</li>
+			</ul>
+		</li>
+		<li>
+			<div class="question">Какой селектор обладает лучшей браузерной поддержкой?</div>
+			<ul class="answer">
+				<li class="is-correct"><code>:first-child</code></li>
+				<li><code>:first-of-type</code></li>
+				<li><code>:nth-child</code></li>
+				<li><code>:last-child</code></li>
+			</ul>
+		</li>
+		<li>
+			<div class="question">В чем разница между селекторами <code>:before</code> и <code>::before</code>?</div>
+			<ul class="answer">
+				<li>разницы нет</li>
+				<li class="is-correct">в поддержке браузерами</li>
+				<li>это два разных селектора</li>
+			</ul>
+		</li>
+		<li>
+			<div class="question">Какой из приведенных селекторов является самым быстрым?</div>
+			<ul class="answer">
+				<li class="is-correct"><code>#id</code></li>
+				<li><code>.class</code></li>
+				<li><code>*</code></li>
+				<li><code>E</code></li>
+				<li><code>.multiple.class</code></li>
+			</ul>
+		</li>
+		<li>
+			<div class="question">Какой из приведенных ниже селекторов является самым медленным?</div>
+			<ul class="answer">
+				<li><code>#id</code></li>
+				<li><code>.class</code></li>
+				<li class="is-correct"><code>*</code></li>
+				<li><code>E</code></li>
+				<li><code>.multiple.class</code></li>
+			</ul>
+		</li>
+		<li>
+			<div class="question">Какой из селекторов работает быстрее?</div>
+			<ul class="answer">
+				<li><code>E F</code></li>
+				<li class="is-correct"><code>E &gt; F</code></li>
+			</ul>
+		</li>
+		<li>
+			<div class="question">Какой из селекторов работает быстрее?</div>
+			<ul class="answer">
+				<li><code>E ~ F</code></li>
+				<li class="is-correct"><code>E + F</code></li>
+			</ul>
+		</li>
+		<li><br/><br/><br/><br/><br/><br/><br/>
+			<div class="question">Какое CSS-свойство критически важно для псевдоэлементов <code>:before</code> и <code>:after</code>?</div>
+			<ul class="answer">
+				<li><code>display</code></li>
+				<li class="is-correct"><code>content</code></li>
+				<li><code>href</code></li>
+				<li><code>url()</code></li>
+			</ul>
+		</li>
+		<li>
+			<div class="question">Какое значение по-умолчанию у свойства <code>position</code>?</div>
+			<ul class="answer">
+				<li><code>fixed</code></li>
+				<li><code>absolute</code></li>
+				<li class="is-correct"><code>static</code></li>
+				<li><code>relative</code></li>
+			</ul>
+		</li>
+		<li>
+			<div class="question">Какого из приведенных ниже типов форм не существует?</div>
+			<ul class="answer">
+				<li><code>range</code></li>
+				<li><code>date</code></li>
+				<li class="is-correct"><code>volume</code></li>
+				<li><code>url</code></li>
+				<li><code>color</code></li>
+			</ul>
+		</li>
+		<li>
+			<div class="question">Каким CSS-селектором можно выделить все ссылки, ведущие на сторонние сайты?</div>
+			<ul class="answer">
+				<li><code>a:not(:link)</code></li>
+				<li class="is-correct"><code>a:not(:local-link)</code></li>
+				<li><code>a:not([href])</code></li>
+				<li><code>a:not(:required)</code></li>
+			</ul>
+		</li>
+		<li>
+			<div class="question">Какого значения CSS-свойства position не существует?</div>
+			<ul class="answer">
+				<li><code>absolute</code></li>
+				<li class="is-correct"><code>center</code></li>
+				<li><code>sticky</code></li>
+				<li><code>relative</code></li>
+				<li><code>fixed</code></li>
+			</ul>
+		</li>
+		<li>
+			<div class="question">В чем отличие между значениями CSS-свойства <code>position</code> &mdash; <code>absolute</code> и <code>fixed</code>?</div>
+			<ul class="answer">
+				<li><code>fixed</code> оставляет место за элементом, а <code>absolute</code> - не всегда</li>
+				<li class="is-correct">элемент с <code>fixed</code> привязывается к краям браузера, а с <code>absolute</code> - не всегда</li>
+				<li>значение <code>absolute</code> можно менять средствами JS, а <code>fixed</code> - не всегда</li>
+				<li>разницы нет</li>
+			</ul>
+		</li>
+		<li>
+			<div class="question">Опишите в нескольких предложениях, чем, по вашему мнению, хорошо и чем плохо использование !important при добавлении веса определенному CSS-правилу?</div>
+		</li>
+	</ul>
+</div>
+</body>
+</html>
