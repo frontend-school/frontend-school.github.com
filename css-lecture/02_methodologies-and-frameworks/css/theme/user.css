@@ -401,6 +401,7 @@ body .slide-background {
 
 .epam-landing body .slide-background {
 	background-position: center !important;
+	background-size: contain !important;
 }
 
 .epam-landing-header body .slide-background {
