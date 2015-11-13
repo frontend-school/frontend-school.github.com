@@ -45,15 +45,16 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 
-				<section data-state="greetings method-bg" data-background="#39c2d7 url(assets/i/epam_logo_white.png)" data-background-transition="none"></section>
+				<section data-state="greetings method-bg" data-background="url(assets/i/lake_view.jpg)">
+                    <h2>Frameworks & Methodologies</h2>
+                    <h3>Yevhen Isakov</h3>
+				</section>
 
-                <section data-background="#fff" data-background-transition="none">
-                    <h1>Frameworks & Methodologies</h1>
-                </section>
-
-				<section>
+				<section data-state="after-bgsize-cover" data-background-transition="fade">
 					<h2>Why?</h2>
 				</section>
+
+                <section data-state="wheel" data-background="url(assets/i/wheel.jpg)"></section>
 
                 <section>
                     <h1>Frameworks</h1>
@@ -224,6 +225,12 @@
 
                 <section data-state="newbie-code method-bg" data-background="#000 url(assets/i/newbie-code.jpg)" data-background-transition="fade"></section>
 
+                <section>
+                    <h1>With or without?</h1>
+                </section>
+
+                <section data-state="omg" data-background="url(assets/i/omg.png)"></section>
+
                 <section data-state="graph" data-background="#fff url(assets/i/graph.png)"></section>
 
 				<section data-state="after-bgsize-cover" data-background="#fff">
@@ -285,6 +292,19 @@
 
                 <section data-background="#fff" data-background-transition="fade">
                     <h1>OPOR</h1>
+                </section>
+
+                <section>
+                    <div class="method-name">
+                        <div><span class="first-letter">O</span><span class="fragment">ne</span></div>
+                        <div><span class="first-letter">P</span><span class="fragment">age</span></div>
+                        <div><span class="first-letter">O</span><span class="fragment">f</span></div>
+                        <div><span class="first-letter">R</span><span class="fragment">ules</span></div>
+                    </div>
+                </section>
+
+                <section>
+                    <h1>OPOR</h1>
                     <ul>
                         <li class="fragment method-author">
                             <img class="method-author__avatar" src="assets/i/sapegin.jpeg" alt=""/>
@@ -318,7 +338,7 @@
                             <h3 style="text-align: center;">Yandex, 2006</h3>
                         </li>
                         <li class="fragment method-author">
-                            <img src="assets/i/harisov.jpg" alt="" style="float: left;margin-right: 30px;" />
+                            <img class="method-author__avatar" src="assets/i/harisov.jpg" alt="" />
                             <h3 style="padding-top: 20px;">Vitaliy Harisov</h3>
                             <p><a href="https://twitter.com/harisov" target="_blank">@harisov</a></p>
                             <p><a href="https://ru.bem.info/" target="_blank">ru.bem.info</a></p>
@@ -327,40 +347,44 @@
                     </ul>
                 </section>
 
+                <section>
+                    <h2>but...</h2>
+                </section>
+
                 <section data-state="deeper method-bg" data-background-transition="none"></section>
 
-                <section data-state="bad-code method-bg" data-background="#fff url(assets/i/bad-code.png)" data-background-transition="none"></section>
+                <!--<section data-state="bad-code method-bg" data-background="#fff url(assets/i/bad-code.png)" data-background-transition="none"></section>-->
 
                 <section>
                     <h1>Reasons</h1>
-<div class="topic-container">
-                    <ul class="bem-reasons">
+                    <div class="topic-container">
+                        <ul class="bem-reasons">
 
-                        <li class="fragment">
-                            <h3>Every element on page may be repeated and may be cloned to any project page</h3>
-                        </li>
+                            <li class="fragment">
+                                <h3>Every element on page may be repeated and may be cloned to any project page</h3>
+                            </li>
 
-                        <li class="fragment">
-                            <h3>CSS Cascade slows page rendering</h3>
-                            <div class="fragment">
-                                <pre><code class="css">        .parent .child { ... }</code></pre>
-                                <pre><code class="css">        .child { ... }</code></pre>
-                            </div>
-                        </li>
+                            <li class="fragment">
+                                <h3>CSS Cascade slows page rendering</h3>
+                                <div class="fragment">
+                                    <pre><code class="css">        .parent .child { ... }</code></pre>
+                                    <pre><code class="css">        .child { ... }</code></pre>
+                                </div>
+                            </li>
 
-                        <li class="fragment">
-                            <h3>Class selectors are faster than tag selectors</h3>
-                            <div class="fragment">
-                                <pre><code class="css">        header { ... }</code></pre>
-                                <pre><code class="css">        .header { ... }</code></pre>
-                            </div>
-                        </li>
+                            <li class="fragment">
+                                <h3>Class selectors are faster than tag selectors</h3>
+                                <div class="fragment">
+                                    <pre><code class="css">        header { ... }</code></pre>
+                                    <pre><code class="css">        .header { ... }</code></pre>
+                                </div>
+                            </li>
 
-                        <li class="fragment">
-                            <h3>Every block name should be unique</h3>
-                        </li>
-                    </ul>
-</div>
+                            <li class="fragment">
+                                <h3>Every block name should be unique</h3>
+                            </li>
+                        </ul>
+                    </div>
                 </section>
 
                 <section>
@@ -481,16 +505,16 @@
                             <ul>
                                 <li class="fragment">logo</li>
                                 <li class="fragment">menu</li>
-                                <li class="fragment">search-icon</li>
                                 <li class="fragment">email-icon</li>
+                                <li class="fragment">search-icon</li>
                             </ul>
                         </li>
                         <li class="fragment">
                             <pre><code class="xml">        <header class="header">
             <a class="header__logo"></a>
             <ul class="header-menu"> ... </ul>
-            <button class="header__search"></button>
             <a class="header__email"></a>
+            <button class="header__search"></button>
         </header></code></pre>
                         </li>
                     </ul>
@@ -500,26 +524,84 @@
                     <h1><span class="first-letter">M</span>odifier</h1>
                 </section>
 
+                <section>
+                    <ul style="margin-top: 0;">
+                        <li>
+                            <div>By default, modifiers are written in format <strong>key_value</strong></div>
+                        </li>
+                        <li class="fragment">
+                            <div>Modifier separates from block name or element name by <strong>one underline</strong></div>
+                            <pre><code class="xml">        <div class="block-name_mod-name"> ... </div>
+
+        <div class="menu_state_hidden"> ... </div></code></pre>
+                        </li>
+                        <li class="fragment">
+                            <div>Both blocks and elements may have modifiers</div>
+                            <pre><code class="xml">        <div class="block_mod"> ... </div>
+
+        <div class="block__elem_mod"> ... </div>
+
+        <li class="menu__item_state_active"> ... </li></code></pre>
+                        </li>
+                        <li class="fragment">
+                            <div>Short modifier format &mdash; logical boolean modifier</div>
+                            <pre><code class="xml">        <div class="block_visible"> ... </div>
+
+        <div class="slider__element_current"> ... </div></code></pre>
+                        </li>
+                        <li class="fragment">
+                            <div>Modifier can exist only on <strong>existing</strong> block or element, it <strong>DOES NOT</strong> exist by itself</div>
+                        </li>
+                    </ul>
+                </section>
+
                 <section data-state="epam-landing" data-background="url(assets/i/epam-landing-preview.jpg)"></section>
 
                 <section data-state="epam-landing" data-background="url(assets/i/epam-landing-modifiers.jpg)"></section>
+
+                <section data-state="epam-landing-header-mod" data-background="url(assets/i/epam-landing-header-modifiers.jpg)">
+                    <ul>
+                        <li class="fragment">
+        <pre><code class="xml">        <ul class="header-menu">
+            <li class="header-menu__item header-menu__item_state_active">
+                <a class="header-menu__title"> ... </a>
+            </li>
+            <li class="header-menu__item">
+                <a class="header-menu__title"> ... </a>
+            </li>
+            <li class="header-menu__item">
+                <a class="header-menu__title"> ... </a>
+            </li>
+        </ul></code></pre>
+                        </li>
+                        <li class="fragment">
+                            <pre><code class="xml">        <nav class="navigation">
+            <a class="navigation__item"> ... </a>
+            <a class="navigation__item navigation__item_current"> ... </a>
+        </nav></code></pre>
+                        </li>
+                    </ul>
+                </section>
 
                 <section>
                     <h1>Most important things</h1>
                     <div class="topic-container">
                         <div>Actually, does <strong>NOT</strong> matter how block separates from element and modifier</div>
+                        <div class="fragment">
 <pre><code class="css">        .block-name__elem-name_mod-name_mod-val
 
         .blockName__elemName—modName
 
         .blockName-elemName_modName_modVal</code></pre>
+                            <div>Every variant is correct in BEM</div>
+                        </div>
                     </div>
                 </section>
 
                 <section>
                     <h1>Most important things</h1>
                     <div class="topic-container">
-                        <div>Nested structure is supported <strong>ONLY</strong> for blocks</div>
+                        <div>Nested logical structure is supported <strong>ONLY</strong> for blocks</div>
                     </div>
                 </section>
 
@@ -534,10 +616,10 @@
                 </div>
             </div>
         </div></code></pre>
-<pre class="fragment"><code class="css">        .block {}
-        .block__elem1 {}
-        .block__elem2 {}
-        .block__elem3 {}</code></pre>
+<pre class="fragment"><code class="css">        .block { ... }
+        .block__elem1 { ... }
+        .block__elem2 { ... }
+        .block__elem3 { ... }</code></pre>
 <pre class="fragment"><code class="xml">        <div class="block">
             <div class="block__elem1">
                 <div class="block__elem2"></div>
@@ -560,7 +642,25 @@
                 <section>
                     <h1>Mixing</h1>
                     <div class="topic-container">
-                        <pre><code class="xml">        <button class="order__button button"></button></code></pre>
+                        <ul>
+                            <li class="fragment">
+                                <div>button</div>
+                                <pre><code class="css">        .button { ... }</code></pre>
+                                <div>order</div>
+                                <pre><code class="css">         .order { ... }
+
+        ...
+
+        .order__button { ... }</code></pre>
+                            </li>
+                            <li class="fragment">
+                                <div style="color:#999;">result</div>
+                                <pre><code class="xml">        <button class="order__button button"></button></code></pre>
+                            </li>
+                            <li class="fragment">
+                                <pre><code class="css">        .order .button { ... }</code></pre>
+                            </li>
+                        </ul>
                     </div>
                 </section>
 
@@ -599,7 +699,7 @@
                             <li class="fragment">BEMJSON</li>
                             <li class="fragment">BEM Tools</li>
                             <li class="fragment">BEM Components</li>
-                            <li class="fragment">BEM File System Organization</li>
+                            <li class="fragment">BEM Project Structure</li>
                             <li class="fragment">i-bem.js</li>
                             <li class="fragment">...and that's not all</li>
                         </ul>
@@ -612,11 +712,10 @@
                     <div class="author">
                         <img class="author-avatar" src="assets/i/avatar.jpg" alt="" />
                         <div class="author-main">
-                            <div class="author-name">Yevhen Isakov</div>
-                            <div class="author-job">Frontend dev @ EPAM Systems</div>
+                            <h2 class="author-name">Yevhen Isakov</h2>
+                            <!--<div class="author-job">Frontend dev @ EPAM Systems</div>-->
                             <div class="author-contacts">
-                                <!--<div class="author-contacts_email"><a href="mailto:is4kov@gmail.com">is4kov@gmail.com</a></div>-->
-                                <div class="author-contacts_twitter"><a href="https://twitter.com/is4kov">@is4kov</a></div>
+                                <div class="author-contacts_twitter"><a href="https://twitter.com/is4kov" target="_blank">@is4kov</a></div>
                             </div>
                         </div>
                     </div>
