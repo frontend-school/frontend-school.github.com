@@ -407,6 +407,7 @@ body .slide-background {
 
 .epam-landing-header body .slide-background {
 	background-position: center 10% !important;
+	background-size: contain !important;
 }
 
 .epam-landing-header-mod body .slide-background {
@@ -424,6 +425,7 @@ body .slide-background {
 
 .graph body .slide-background.present {
 	background-position: center !important;
+	background-size: contain !important;
 }
 
 .legion body .slide-background.present {
